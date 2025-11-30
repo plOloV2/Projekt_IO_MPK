@@ -24,7 +24,7 @@ Model::Kierowca Model::Inwentarz::dajKierowce(int pIdKierowcy) {
 	throw "Not yet implemented";
 }
 
-void Model::Inwentarz::modyfikujKierowce(bool pStatusKierowcy[*] ) {
+void Model::Inwentarz::modyfikujKierowce(bool pStatusKierowcy[] ) {
 	throw "Not yet implemented";
 }
 
@@ -32,7 +32,7 @@ Kierowcy* Model::Inwentarz::dajKierowcow(int pIdKursu) {
 	throw "Not yet implemented";
 }
 
-void Model::Inwentarz::dodajPowiadomienie(int pIdKierowcow[*] , string pPowiadmienie) {
+void Model::Inwentarz::dodajPowiadomienie(int pIdKierowcow[] , string pPowiadmienie) {
 	throw "Not yet implemented";
 }
 

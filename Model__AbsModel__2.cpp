@@ -19,7 +19,7 @@ string Model::AbsModel__2::znalezienieKierowcy(int pIdKierowcy) {
 	throw "Not yet implemented";
 }
 
-void Model::AbsModel__2::modyfikacjaKierowcy(bool pStatusKierowcy[*] ) {
+void Model::AbsModel__2::modyfikacjaKierowcy(bool pStatusKierowcy[] ) {
 	throw "Not yet implemented";
 }
 
@@ -27,7 +27,7 @@ string* Model::AbsModel__2::znalezienieKierowcow(int pIdKursow) {
 	throw "Not yet implemented";
 }
 
-void Model::AbsModel__2::wyslaniePowiadomien(int pIdKierowcow[*] , string pPowiadomienie) {
+void Model::AbsModel__2::wyslaniePowiadomien(int pIdKierowcow[] , string pPowiadomienie) {
 	throw "Not yet implemented";
 }
 

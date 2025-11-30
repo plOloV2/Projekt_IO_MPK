@@ -2,8 +2,8 @@
 #include <string>
 using namespace std;
 
-#ifndef __SystemZarządzaniaKomunikacjąMiejską_hpp__
-#define __SystemZarządzaniaKomunikacjąMiejską_hpp__
+#ifndef __SystemZarzadzaniaKomunikacjaMiejska_hpp__
+#define __SystemZarzadzaniaKomunikacjaMiejska_hpp__
 
 #include "AbsKontrolerPlanera.hpp"
 #include "AbsKontrolerDystrybutora.hpp"
@@ -16,12 +16,12 @@ namespace Kontroler
 	class AbsKontrolerDystrybutora;
 	class AbsKontrolerTablicy;
 	class AbsKontrolerKierowcy;
-	class SystemZarządzaniaKomunikacjąMiejską;
+	class SystemZarzadzaniaKomunikacjaMiejska;
 }
 
 namespace Kontroler
 {
-	class SystemZarządzaniaKomunikacjąMiejską
+	class SystemZarzadzaniaKomunikacjaMiejska
 	{
 		private: Kontroler::AbsKontrolerPlanera _kontrolerPlanera;
 		private: Kontroler::AbsKontrolerDystrybutora _kontrolerDystrybutora;

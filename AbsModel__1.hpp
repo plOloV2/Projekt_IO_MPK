@@ -18,11 +18,11 @@ class AbsModel__1
 
 	public: string znalezienieKierowcy(int pIdKierowcy);
 
-	public: void modyfikacjaKierowcy(bool pStatusKierowcy[*] );
+	public: void modyfikacjaKierowcy(bool pStatusKierowcy[] );
 
-	public: string* znalezienieKierowcow(int pIdKursu[*] );
+	public: string* znalezienieKierowcow(int pIdKursu[] );
 
-	public: void wyslaniePowiadomien(int pIdKierowców[*] , string pPowiadomienei);
+	public: void wyslaniePowiadomien(int pIdKierowcow[] , string pPowiadomienei);
 
 	public: void zglaszenieIncydentu(string pIncydent);
 

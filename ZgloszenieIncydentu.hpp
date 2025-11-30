@@ -2,8 +2,8 @@
 #include <string>
 using namespace std;
 
-#ifndef __ZgłoszenieIncydentu_hpp__
-#define __ZgłoszenieIncydentu_hpp__
+#ifndef __ZgloszenieIncydentu_hpp__
+#define __ZgloszenieIncydentu_hpp__
 
 #include "IModel.hpp"
 #include "AbsStrategiaAktualizacjiStanuKursu.hpp"
@@ -12,12 +12,12 @@ class IModel;
 namespace Kontroler
 {
 	// class AbsStrategiaAktualizacjiStanuKursu;
-	class ZgłoszenieIncydentu;
+	class ZgloszenieIncydentu;
 }
 
 namespace Kontroler
 {
-	class ZgłoszenieIncydentu: public Kontroler::AbsStrategiaAktualizacjiStanuKursu
+	class ZgloszenieIncydentu: public Kontroler::AbsStrategiaAktualizacjiStanuKursu
 	{
 
 		public: void zgloszenieIncydentu(int pIdKierowcy, int pIdKursu);

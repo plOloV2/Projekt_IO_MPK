@@ -15,10 +15,10 @@ namespace Model
 	class Kurs
 	{
 		private: int _idKursu;
-		private: int _listaIdPrzystankow[*];
-		private: string _listaGodzinPrzyjazdow[*];
+		private: int _listaIdPrzystankow[];
+		private: string _listaGodzinPrzyjazdow[];
 
-		public: Kurs(int pIdKursu, int pListaIdPrzystankow[*] , string pListaGodzinPrzyjazdow[*] );
+		public: Kurs(int pIdKursu, int pListaIdPrzystankow[] , string pListaGodzinPrzyjazdow[] );
 
 		public: int dajIdKursu();
 

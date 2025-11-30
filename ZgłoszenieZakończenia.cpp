@@ -1,19 +1,19 @@
 #include <exception>
 using namespace std;
 
-#include "ZgłoszenieZakończenia.hpp"
+#include "ZgloszenieZakonczenia.hpp"
 #include "IModel.hpp"
 #include "AbsStrategiaAktualizacjiStanuKursu.hpp"
 
-void Kontroler::ZgłoszenieZakończenia::zgloszenieZakonczenia(int pIdKierowcy, int pIdKursu) {
+void Kontroler::ZgloszenieZakonczenia::zgloszenieZakonczenia(int pIdKierowcy, int pIdKursu) {
 	throw "Not yet implemented";
 }
 
-bool Kontroler::ZgłoszenieZakończenia::zatwierdzenieZakonczeniaKursu() {
+bool Kontroler::ZgloszenieZakonczenia::zatwierdzenieZakonczeniaKursu() {
 	throw "Not yet implemented";
 }
 
-void Kontroler::ZgłoszenieZakończenia::zakonczenieAktualizacjiStatusu(IModel pModel, int pIdKierowcy, int pIdKursu) {
+void Kontroler::ZgloszenieZakonczenia::zakonczenieAktualizacjiStatusu(IModel pModel, int pIdKierowcy, int pIdKursu) {
 	throw "Not yet implemented";
 }
 

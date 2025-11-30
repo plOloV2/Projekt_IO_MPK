@@ -26,10 +26,10 @@ namespace Model
 	class Inwentarz
 	{
 		private: Model::AbsDAO _dao;
-		private: Model::Kierowca _kierowcy[*];
-		private: Model::Powiadomienie _powiadomienia[*];
-		private: Model::Kurs _kursy[*];
-		private: Model::Incydent _incydenty[*];
+		private: Model::Kierowca _kierowcy[];
+		private: Model::Powiadomienie _powiadomienia[];
+		private: Model::Kurs _kursy[];
+		private: Model::Incydent _incydenty[];
 
 		public: Inwentarz(Model::AbsDAO pDao);
 
@@ -39,11 +39,11 @@ namespace Model
 
 		public: Model::Kierowca dajKierowce(int pIdKierowcy);
 
-		public: void modyfikujKierowce(bool pStatusKierowcy[*] );
+		public: void modyfikujKierowce(bool pStatusKierowcy[] );
 
 		public: Kierowcy* dajKierowcow(int pIdKursu);
 
-		public: void dodajPowiadomienie(int pIdKierowcow[*] , string pPowiadmienie);
+		public: void dodajPowiadomienie(int pIdKierowcow[] , string pPowiadmienie);
 
 		public: void dodajIncydent(string pIncydent);
 

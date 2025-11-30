@@ -19,7 +19,7 @@ string Model::AbsDAO::znajdzKurs(int pIdKursu) {
 	throw "Not yet implemented";
 }
 
-void Model::AbsDAO::edytujKierowce(bool pStatusKierowcy[*] ) {
+void Model::AbsDAO::edytujKierowce(bool pStatusKierowcy[] ) {
 	throw "Not yet implemented";
 }
 
@@ -31,7 +31,7 @@ string* Model::AbsDAO::znajdzKierowcow(int pIdKursu) {
 	throw "Not yet implemented";
 }
 
-void Model::AbsDAO::dodajPowiadomienie(int pIdKierowcow[*] , string pPowiadomienie) {
+void Model::AbsDAO::dodajPowiadomienie(int pIdKierowcow[] , string pPowiadomienie) {
 	throw "Not yet implemented";
 }
 

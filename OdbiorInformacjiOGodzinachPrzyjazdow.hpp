@@ -1,8 +1,8 @@
 #include <exception>
 using namespace std;
 
-#ifndef __OdbiórInformacjiOGodzinachPrzyjazdów_hpp__
-#define __OdbiórInformacjiOGodzinachPrzyjazdów_hpp__
+#ifndef __OdbiorInformacjiOGodzinachPrzyjazdow_hpp__
+#define __OdbiorInformacjiOGodzinachPrzyjazdow_hpp__
 
 #include "AbsModel__1.hpp"
 #include "IModel.hpp"
@@ -11,12 +11,12 @@ class AbsModel__1;
 class IModel;
 namespace Kontroler
 {
-	class OdbiórInformacjiOGodzinachPrzyjazdów;
+	class OdbiorInformacjiOGodzinachPrzyjazdow;
 }
 
 namespace Kontroler
 {
-	class OdbiórInformacjiOGodzinachPrzyjazdów
+	class OdbiorInformacjiOGodzinachPrzyjazdow
 	{
 		private: AbsModel__1 _absModel;
 

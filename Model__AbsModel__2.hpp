@@ -23,11 +23,11 @@ namespace Model
 
 		public: string znalezienieKierowcy(int pIdKierowcy);
 
-		public: void modyfikacjaKierowcy(bool pStatusKierowcy[*] );
+		public: void modyfikacjaKierowcy(bool pStatusKierowcy[] );
 
 		public: string* znalezienieKierowcow(int pIdKursow);
 
-		public: void wyslaniePowiadomien(int pIdKierowcow[*] , string pPowiadomienie);
+		public: void wyslaniePowiadomien(int pIdKierowcow[] , string pPowiadomienie);
 
 		public: void zglaszenieIncydentu(string pIncydent);
 

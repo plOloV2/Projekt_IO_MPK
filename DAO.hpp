@@ -28,13 +28,13 @@ namespace Model
 
 		public: string znajdzKurs(int pIdKursu);
 
-		public: void edytujKierowce(bool pStatusKierowcy[*] );
+		public: void edytujKierowce(bool pStatusKierowcy[] );
 
 		public: string znajdzKierowce(int pIdKierowcy);
 
 		public: string* znajdzKierowcow(int pIdKursu);
 
-		public: void dodajPowiadomienie(int pIdKierowcow[*] , string pPowiadomienie);
+		public: void dodajPowiadomienie(int pIdKierowcow[] , string pPowiadomienie);
 
 		public: string* znajdzPowiadomienia(int pIdKierowcy);
 

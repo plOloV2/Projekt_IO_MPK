@@ -19,15 +19,15 @@ string AbsModel__1::znalezienieKierowcy(int pIdKierowcy) {
 	throw "Not yet implemented";
 }
 
-void AbsModel__1::modyfikacjaKierowcy(bool pStatusKierowcy[*] ) {
+void AbsModel__1::modyfikacjaKierowcy(bool pStatusKierowcy[] ) {
 	throw "Not yet implemented";
 }
 
-string* AbsModel__1::znalezienieKierowcow(int pIdKursu[*] ) {
+string* AbsModel__1::znalezienieKierowcow(int pIdKursu[] ) {
 	throw "Not yet implemented";
 }
 
-void AbsModel__1::wyslaniePowiadomien(int pIdKierowców[*] , string pPowiadomienei) {
+void AbsModel__1::wyslaniePowiadomien(int pIdKierowcow[] , string pPowiadomienei) {
 	throw "Not yet implemented";
 }
 

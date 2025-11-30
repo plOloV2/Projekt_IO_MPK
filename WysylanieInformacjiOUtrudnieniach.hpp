@@ -2,8 +2,8 @@
 #include <string>
 using namespace std;
 
-#ifndef __WysyłanieInformacjiOUtrudnieniach_hpp__
-#define __WysyłanieInformacjiOUtrudnieniach_hpp__
+#ifndef __WysylanieInformacjiOUtrudnieniach_hpp__
+#define __WysylanieInformacjiOUtrudnieniach_hpp__
 
 #include "AbsModel__1.hpp"
 #include "IModel.hpp"
@@ -12,12 +12,12 @@ class AbsModel__1;
 class IModel;
 namespace Kontroler
 {
-	class WysyłanieInformacjiOUtrudnieniach;
+	class WysylanieInformacjiOUtrudnieniach;
 }
 
 namespace Kontroler
 {
-	class WysyłanieInformacjiOUtrudnieniach
+	class WysylanieInformacjiOUtrudnieniach
 	{
 		private: AbsModel__1 _absModel;
 

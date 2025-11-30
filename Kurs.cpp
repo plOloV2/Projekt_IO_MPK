@@ -3,7 +3,7 @@
 using namespace std;
 
 #include "Kurs.hpp"
-Model::Kurs::Kurs(int pIdKursu, int pListaIdPrzystankow[*] , string pListaGodzinPrzyjazdow[*] ) {
+Model::Kurs::Kurs(int pIdKursu, int pListaIdPrzystankow[] , string pListaGodzinPrzyjazdow[] ) {
 }
 
 int Model::Kurs::dajIdKursu() {

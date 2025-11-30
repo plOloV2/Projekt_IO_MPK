@@ -1,8 +1,8 @@
 #include <exception>
 using namespace std;
 
-#ifndef __ZgłoszenieZakończenia_hpp__
-#define __ZgłoszenieZakończenia_hpp__
+#ifndef __ZgloszenieRozpoczecia_hpp__
+#define __ZgloszenieRozpoczecia_hpp__
 
 #include "IModel.hpp"
 #include "AbsStrategiaAktualizacjiStanuKursu.hpp"
@@ -11,17 +11,17 @@ class IModel;
 namespace Kontroler
 {
 	// class AbsStrategiaAktualizacjiStanuKursu;
-	class ZgłoszenieZakończenia;
+	class ZgloszenieRozpoczecia;
 }
 
 namespace Kontroler
 {
-	class ZgłoszenieZakończenia: public Kontroler::AbsStrategiaAktualizacjiStanuKursu
+	class ZgloszenieRozpoczecia: public Kontroler::AbsStrategiaAktualizacjiStanuKursu
 	{
 
-		public: void zgloszenieZakonczenia(int pIdKierowcy, int pIdKursu);
+		public: void zgloszenieRozpoczecia(int pIdKierowcy, int pIdKursu);
 
-		private: bool zatwierdzenieZakonczeniaKursu();
+		private: bool zatwierdzenieRozpoczeciaKursu();
 
 		public: void zakonczenieAktualizacjiStatusu(IModel pModel, int pIdKierowcy, int pIdKursu);
 	};

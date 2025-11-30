@@ -24,7 +24,7 @@ string Model::DAO::znajdzKurs(int pIdKursu) {
 	throw "Not yet implemented";
 }
 
-void Model::DAO::edytujKierowce(bool pStatusKierowcy[*] ) {
+void Model::DAO::edytujKierowce(bool pStatusKierowcy[] ) {
 	throw "Not yet implemented";
 }
 
@@ -36,7 +36,7 @@ string* Model::DAO::znajdzKierowcow(int pIdKursu) {
 	throw "Not yet implemented";
 }
 
-void Model::DAO::dodajPowiadomienie(int pIdKierowcow[*] , string pPowiadomienie) {
+void Model::DAO::dodajPowiadomienie(int pIdKierowcow[] , string pPowiadomienie) {
 	throw "Not yet implemented";
 }
 
