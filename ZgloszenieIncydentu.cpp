@@ -3,7 +3,6 @@
 using namespace std;
 
 #include "ZgloszenieIncydentu.hpp"
-#include "IModel.hpp"
 #include "AbsStrategiaAktualizacjiStanuKursu.hpp"
 
 void Kontroler::ZgloszenieIncydentu::zgloszenieIncydentu(int pIdKierowcy, int pIdKursu) {
@@ -18,7 +17,7 @@ string Kontroler::ZgloszenieIncydentu::wprowadzenieOpisuIncydentu() {
 	throw "Not yet implemented";
 }
 
-void Kontroler::ZgloszenieIncydentu::zakonczenieAktualizacjiStatusu(IModel pModel, int pIdKierowcy, int pIdKursu) {
+void Kontroler::ZgloszenieIncydentu::zakonczenieAktualizacjiStatusu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu) {
 	throw "Not yet implemented";
 }
 

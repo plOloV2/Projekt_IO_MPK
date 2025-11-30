@@ -4,11 +4,9 @@ using namespace std;
 #ifndef __AbsStrategiaAktualizacjiStanuKursu_hpp__
 #define __AbsStrategiaAktualizacjiStanuKursu_hpp__
 
-#include "AbsModel__1.hpp"
-#include "IModel.hpp"
+#include "AbsModel.hpp"
 
-class AbsModel__1;
-class IModel;
+class AbsModel;
 namespace Kontroler
 {
 	class AbsStrategiaAktualizacjiStanuKursu;
@@ -18,11 +16,11 @@ namespace Kontroler
 {
 	class AbsStrategiaAktualizacjiStanuKursu
 	{
-		private: AbsModel__1 _absModel;
+		private: Model::AbsModel _absModel;
 		private: int _idKursu;
 		private: int _idKierowcy;
 
-		public: void zakonczenieAktualizacjiKursu(IModel pModel, int pIdKierowcy, int pIdKursu);
+		public: void zakonczenieAktualizacjiKursu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu);
 	};
 }
 

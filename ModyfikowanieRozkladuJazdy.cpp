@@ -2,10 +2,9 @@
 using namespace std;
 
 #include "ModyfikowanieRozkladuJazdy.hpp"
-#include "AbsModel__1.hpp"
-#include "IModel.hpp"
+#include "AbsModel.hpp"
 
-void Kontroler::ModyfikowanieRozkladuJazdy::modyfikowanieRozkladuJazdy(IModel pModel, int pIdKursu) {
+void Kontroler::ModyfikowanieRozkladuJazdy::modyfikowanieRozkladuJazdy(Model::AbsModel pModel, int pIdKursu) {
 	throw "Not yet implemented";
 }
 

@@ -15,7 +15,7 @@ namespace Model
 	class AbsDAO
 	{
 
-		public: void dodajWpisDoRejestru(String pZdarzenie);
+		public: void dodajWpisDoRejestru(string pZdarzenie);
 
 		public: int dodajKurs();
 

@@ -3,7 +3,7 @@
 using namespace std;
 
 #include "Powiadomienie.hpp"
-Model::Powiadomienie::Powiadomienie(int pIdKursow[] , int pTypIncydentu, string pOpisIncydent) {
+Model::Powiadomienie::Powiadomienie(vector<int> pIdKursow , int pTypIncydentu, string pOpisIncydent) {
 }
 
 int* Model::Powiadomienie::dajIdKursow() {

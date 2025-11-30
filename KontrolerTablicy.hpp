@@ -4,12 +4,10 @@ using namespace std;
 #ifndef __KontrolerTablicy_hpp__
 #define __KontrolerTablicy_hpp__
 
-#include "AbsModel__1.hpp"
-#include "IModel.hpp"
+#include "AbsModel.hpp"
 #include "AbsKontrolerTablicy.hpp"
 
-class AbsModel__1;
-class IModel;
+class AbsModel;
 namespace Kontroler
 {
 	// class AbsKontrolerTablicy;
@@ -20,9 +18,9 @@ namespace Kontroler
 {
 	class KontrolerTablicy: public Kontroler::AbsKontrolerTablicy
 	{
-		private: AbsModel__1 _absModel;
+		private: Model::AbsModel _absModel;
 
-		public: KontrolerTablicy(IModel pModel);
+		public: KontrolerTablicy(Model::AbsModel pModel);
 
 		public: void odbiorInformacjiOGodzinachPrzyjazdow();
 	};

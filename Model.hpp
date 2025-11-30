@@ -6,18 +6,18 @@ using namespace std;
 #define __Model_hpp__
 
 #include "AbsDAO.hpp"
-#include "Model__AbsModel__2.hpp"
+#include "AbsModel.hpp"
 
 namespace Model
 {
 	class AbsDAO;
-	// class AbsModel__2;
+	//class AbsModel;
 	class Model;
 }
 
 namespace Model
 {
-	class Model: public Model::AbsModel__2
+	class Model: public AbsModel
 	{
 		private: Model::AbsDAO _dao;
 

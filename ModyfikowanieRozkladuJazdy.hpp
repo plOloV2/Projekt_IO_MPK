@@ -4,11 +4,9 @@ using namespace std;
 #ifndef __ModyfikowanieRozkladuJazdy_hpp__
 #define __ModyfikowanieRozkladuJazdy_hpp__
 
-#include "AbsModel__1.hpp"
-#include "IModel.hpp"
+#include "AbsModel.hpp"
 
 class AbsModel__1;
-class IModel;
 namespace Kontroler
 {
 	class ModyfikowanieRozkladuJazdy;
@@ -18,9 +16,9 @@ namespace Kontroler
 {
 	class ModyfikowanieRozkladuJazdy
 	{
-		private: AbsModel__1 _absModel;
+		private: Model::AbsModel _absModel;
 
-		public: void modyfikowanieRozkladuJazdy(IModel pModel, int pIdKursu);
+		public: void modyfikowanieRozkladuJazdy(Model::AbsModel pModel, int pIdKursu);
 
 		private: int edycjaPrzystankowKoncowych();
 

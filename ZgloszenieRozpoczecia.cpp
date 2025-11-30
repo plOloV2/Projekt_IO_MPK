@@ -2,7 +2,6 @@
 using namespace std;
 
 #include "ZgloszenieRozpoczecia.hpp"
-#include "IModel.hpp"
 #include "AbsStrategiaAktualizacjiStanuKursu.hpp"
 
 void Kontroler::ZgloszenieRozpoczecia::zgloszenieRozpoczecia(int pIdKierowcy, int pIdKursu) {
@@ -13,7 +12,7 @@ bool Kontroler::ZgloszenieRozpoczecia::zatwierdzenieRozpoczeciaKursu() {
 	throw "Not yet implemented";
 }
 
-void Kontroler::ZgloszenieRozpoczecia::zakonczenieAktualizacjiStatusu(IModel pModel, int pIdKierowcy, int pIdKursu) {
+void Kontroler::ZgloszenieRozpoczecia::zakonczenieAktualizacjiStatusu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu) {
 	throw "Not yet implemented";
 }
 

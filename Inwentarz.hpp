@@ -1,5 +1,6 @@
 #include <exception>
 #include <string>
+#include <vector>
 using namespace std;
 
 #ifndef __Inwentarz_hpp__
@@ -26,10 +27,10 @@ namespace Model
 	class Inwentarz
 	{
 		private: Model::AbsDAO _dao;
-		private: Model::Kierowca _kierowcy[];
-		private: Model::Powiadomienie _powiadomienia[];
-		private: Model::Kurs _kursy[];
-		private: Model::Incydent _incydenty[];
+		private: vector<Model::Kierowca> _kierowcy;
+		private: vector<Model::Powiadomienie> _powiadomienia;
+		private: vector<Model::Kurs> _kursy;
+		private: vector<Model::Incydent> _incydenty;
 
 		public: Inwentarz(Model::AbsDAO pDao);
 
@@ -41,7 +42,7 @@ namespace Model
 
 		public: void modyfikujKierowce(bool pStatusKierowcy[] );
 
-		public: Kierowcy* dajKierowcow(int pIdKursu);
+		public: Kierowca* dajKierowcow(int pIdKursu);
 
 		public: void dodajPowiadomienie(int pIdKierowcow[] , string pPowiadmienie);
 

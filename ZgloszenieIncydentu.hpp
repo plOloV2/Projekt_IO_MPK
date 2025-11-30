@@ -5,10 +5,8 @@ using namespace std;
 #ifndef __ZgloszenieIncydentu_hpp__
 #define __ZgloszenieIncydentu_hpp__
 
-#include "IModel.hpp"
 #include "AbsStrategiaAktualizacjiStanuKursu.hpp"
 
-class IModel;
 namespace Kontroler
 {
 	// class AbsStrategiaAktualizacjiStanuKursu;
@@ -26,7 +24,7 @@ namespace Kontroler
 
 		private: string wprowadzenieOpisuIncydentu();
 
-		public: void zakonczenieAktualizacjiStatusu(IModel pModel, int pIdKierowcy, int pIdKursu);
+		public: void zakonczenieAktualizacjiStatusu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu);
 	};
 }
 

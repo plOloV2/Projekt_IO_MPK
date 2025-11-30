@@ -4,12 +4,10 @@ using namespace std;
 #ifndef __KontrolerDystrybutora_hpp__
 #define __KontrolerDystrybutora_hpp__
 
-#include "AbsModel__1.hpp"
-#include "IModel.hpp"
+#include "AbsModel.hpp"
 #include "AbsKontrolerDystrybutora.hpp"
 
-class AbsModel__1;
-class IModel;
+class AbsModel;
 namespace Kontroler
 {
 	// class AbsKontrolerDystrybutora;
@@ -20,9 +18,9 @@ namespace Kontroler
 {
 	class KontrolerDystrybutora: public Kontroler::AbsKontrolerDystrybutora
 	{
-		private: AbsModel__1 _absModel;
+		private: Model::AbsModel _absModel;
 
-		public: KontrolerDystrybutora(IModel pModel);
+		public: KontrolerDystrybutora(Model::AbsModel pModel);
 
 		public: void modyfikowanieRozkladuJazdy();
 

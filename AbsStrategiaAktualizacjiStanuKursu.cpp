@@ -2,10 +2,9 @@
 using namespace std;
 
 #include "AbsStrategiaAktualizacjiStanuKursu.hpp"
-#include "AbsModel__1.hpp"
-#include "IModel.hpp"
+#include "AbsModel.hpp"
 
-void Kontroler::AbsStrategiaAktualizacjiStanuKursu::zakonczenieAktualizacjiKursu(IModel pModel, int pIdKierowcy, int pIdKursu) {
+void Kontroler::AbsStrategiaAktualizacjiStanuKursu::zakonczenieAktualizacjiKursu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu) {
 	throw "Not yet implemented";
 }
 

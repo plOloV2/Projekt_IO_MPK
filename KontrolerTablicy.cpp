@@ -2,11 +2,10 @@
 using namespace std;
 
 #include "KontrolerTablicy.hpp"
-#include "AbsModel__1.hpp"
-#include "IModel.hpp"
+#include "AbsModel.hpp"
 #include "AbsKontrolerTablicy.hpp"
 
-Kontroler::KontrolerTablicy::KontrolerTablicy(IModel pModel) {
+Kontroler::KontrolerTablicy::KontrolerTablicy(Model::AbsModel pModel) {
 }
 
 void Kontroler::KontrolerTablicy::odbiorInformacjiOGodzinachPrzyjazdow() {

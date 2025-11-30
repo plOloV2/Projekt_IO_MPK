@@ -5,11 +5,9 @@ using namespace std;
 #ifndef __WysylanieInformacjiOUtrudnieniach_hpp__
 #define __WysylanieInformacjiOUtrudnieniach_hpp__
 
-#include "AbsModel__1.hpp"
-#include "IModel.hpp"
+#include "AbsModel.hpp"
 
-class AbsModel__1;
-class IModel;
+class AbsModel;
 namespace Kontroler
 {
 	class WysylanieInformacjiOUtrudnieniach;
@@ -19,9 +17,9 @@ namespace Kontroler
 {
 	class WysylanieInformacjiOUtrudnieniach
 	{
-		private: AbsModel__1 _absModel;
+		private: Model::AbsModel _absModel;
 
-		public: void wyslanieInformacjiOUtrudnieniach(IModel pModel, int pTypIncydentu, string pOpisIncydentu);
+		public: void wyslanieInformacjiOUtrudnieniach(Model::AbsModel pModel, int pTypIncydentu, string pOpisIncydentu);
 
 		private: int* wyborIdKursow();
 	};

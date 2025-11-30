@@ -2,17 +2,17 @@
 #include <string>
 using namespace std;
 
-#ifndef __Model__AbsModel__2_hpp__
-#define __Model__AbsModel__2_hpp__
+#ifndef __AbsModel_hpp__
+#define __AbsModel_hpp__
 
 namespace Model
 {
-	class AbsModel__2;
+	class AbsModel;
 }
 
 namespace Model
 {
-	class AbsModel__2
+	class AbsModel
 	{
 
 		public: void dodawanieKursu();

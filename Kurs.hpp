@@ -1,5 +1,6 @@
 #include <exception>
 #include <string>
+#include <vector>
 using namespace std;
 
 #ifndef __Kurs_hpp__
@@ -15,10 +16,10 @@ namespace Model
 	class Kurs
 	{
 		private: int _idKursu;
-		private: int _listaIdPrzystankow[];
-		private: string _listaGodzinPrzyjazdow[];
+		private: vector<int> _listaIdPrzystankow;
+		private: vector<int> _listaGodzinPrzyjazdow;
 
-		public: Kurs(int pIdKursu, int pListaIdPrzystankow[] , string pListaGodzinPrzyjazdow[] );
+		public: Kurs(int pIdKursu, vector<int> pListaIdPrzystankow , vector<string> pListaGodzinPrzyjazdow );
 
 		public: int dajIdKursu();
 

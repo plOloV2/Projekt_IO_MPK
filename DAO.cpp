@@ -8,7 +8,7 @@ using namespace std;
 Model::DAO::DAO() {
 }
 
-void Model::DAO::dodajWpisDoRejestru(String pZdarzenie) {
+void Model::DAO::dodajWpisDoRejestru(string pZdarzenie) {
 	throw "Not yet implemented";
 }
 

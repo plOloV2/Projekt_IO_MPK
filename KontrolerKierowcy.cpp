@@ -2,11 +2,10 @@
 using namespace std;
 
 #include "KontrolerKierowcy.hpp"
-#include "AbsModel__1.hpp"
-#include "IModel.hpp"
+#include "AbsModel.hpp"
 #include "AbsKontrolerKierowcy.hpp"
 
-Kontroler::KontrolerKierowcy::KontrolerKierowcy(IModel pModel) {
+Kontroler::KontrolerKierowcy::KontrolerKierowcy(Model::AbsModel pModel) {
 }
 
 void Kontroler::KontrolerKierowcy::aktualizacjaStanuKursu() {

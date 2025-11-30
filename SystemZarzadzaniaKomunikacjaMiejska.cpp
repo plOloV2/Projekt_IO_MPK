@@ -8,7 +8,11 @@ using namespace std;
 #include "AbsKontrolerTablicy.hpp"
 #include "AbsKontrolerKierowcy.hpp"
 
-void Kontroler::SystemZarzadzaniaKomunikacjaMiejska::main(string pArgs[] ) {
+int Kontroler::SystemZarzadzaniaKomunikacjaMiejska::main() {
 	throw "Not yet implemented";
 }
 
+int main() {
+    Kontroler::SystemZarzadzaniaKomunikacjaMiejska app;
+    return 0;
+}

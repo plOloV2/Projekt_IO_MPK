@@ -4,7 +4,7 @@ using namespace std;
 
 #include "Model.hpp"
 #include "AbsDAO.hpp"
-#include "Model__AbsModel__2.hpp"
+#include "AbsModel.hpp"
 
 void Model::Model::dodawanieKursu() {
 	throw "Not yet implemented";

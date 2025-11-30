@@ -4,10 +4,8 @@ using namespace std;
 #ifndef __ZgloszenieRozpoczecia_hpp__
 #define __ZgloszenieRozpoczecia_hpp__
 
-#include "IModel.hpp"
 #include "AbsStrategiaAktualizacjiStanuKursu.hpp"
 
-class IModel;
 namespace Kontroler
 {
 	// class AbsStrategiaAktualizacjiStanuKursu;
@@ -23,7 +21,7 @@ namespace Kontroler
 
 		private: bool zatwierdzenieRozpoczeciaKursu();
 
-		public: void zakonczenieAktualizacjiStatusu(IModel pModel, int pIdKierowcy, int pIdKursu);
+		public: void zakonczenieAktualizacjiStatusu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu);
 	};
 }
 

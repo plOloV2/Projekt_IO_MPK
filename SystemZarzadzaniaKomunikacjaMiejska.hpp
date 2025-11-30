@@ -28,7 +28,7 @@ namespace Kontroler
 		private: Kontroler::AbsKontrolerTablicy _kontrolerTablicy;
 		private: Kontroler::AbsKontrolerKierowcy _kontrolerKierowcy;
 
-		public: void main(string pArgs[] );
+		public: int main();
 	};
 }
 

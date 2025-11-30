@@ -4,12 +4,10 @@ using namespace std;
 #ifndef __KontrolerKierowcy_hpp__
 #define __KontrolerKierowcy_hpp__
 
-#include "AbsModel__1.hpp"
-#include "IModel.hpp"
+#include "AbsModel.hpp"
 #include "AbsKontrolerKierowcy.hpp"
 
-class AbsModel__1;
-class IModel;
+class AbsModel;
 namespace Kontroler
 {
 	// class AbsKontrolerKierowcy;
@@ -20,9 +18,9 @@ namespace Kontroler
 {
 	class KontrolerKierowcy: public Kontroler::AbsKontrolerKierowcy
 	{
-		private: AbsModel__1 _absModel;
+		private: Model::AbsModel _absModel;
 
-		public: KontrolerKierowcy(IModel pModel);
+		public: KontrolerKierowcy(Model::AbsModel pModel);
 
 		public: void aktualizacjaStanuKursu();
 

@@ -2,11 +2,10 @@
 using namespace std;
 
 #include "KontrolerPlanera.hpp"
-#include "AbsModel__1.hpp"
-#include "IModel.hpp"
+#include "AbsModel.hpp"
 #include "AbsKontrolerPlanera.hpp"
 
-Kontroler::KontrolerPlanera::KontrolerPlanera(IModel pModel) {
+Kontroler::KontrolerPlanera::KontrolerPlanera(Model::AbsModel pModel) {
 }
 
 void Kontroler::KontrolerPlanera::tworzenieRozkladuJazdy() {

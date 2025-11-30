@@ -1,5 +1,6 @@
 #include <exception>
 #include <string>
+#include <vector>
 using namespace std;
 
 #ifndef __Powiadomienie_hpp__
@@ -14,11 +15,11 @@ namespace Model
 {
 	class Powiadomienie
 	{
-		private: int _idKursow[];
+		private: vector<int> _idKursow;
 		private: int _typIncydentu;
 		private: string _opisIncydentu;
 
-		public: Powiadomienie(int pIdKursow[] , int pTypIncydentu, string pOpisIncydent);
+		public: Powiadomienie(vector<int> pIdKursow , int pTypIncydentu, string pOpisIncydent);
 
 		public: int* dajIdKursow();
 

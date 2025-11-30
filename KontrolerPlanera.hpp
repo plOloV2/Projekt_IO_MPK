@@ -4,12 +4,10 @@ using namespace std;
 #ifndef __KontrolerPlanera_hpp__
 #define __KontrolerPlanera_hpp__
 
-#include "AbsModel__1.hpp"
-#include "IModel.hpp"
+#include "AbsModel.hpp"
 #include "AbsKontrolerPlanera.hpp"
 
-class AbsModel__1;
-class IModel;
+class AbsModel;
 namespace Kontroler
 {
 	// class AbsKontrolerPlanera;
@@ -20,9 +18,9 @@ namespace Kontroler
 {
 	class KontrolerPlanera: public Kontroler::AbsKontrolerPlanera
 	{
-		private: AbsModel__1 _absModel;
+		private: Model::AbsModel _absModel;
 
-		public: KontrolerPlanera(IModel pModel);
+		public: KontrolerPlanera(Model::AbsModel pModel);
 
 		public: void tworzenieRozkladuJazdy();
 

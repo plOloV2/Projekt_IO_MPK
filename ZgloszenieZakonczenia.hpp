@@ -4,7 +4,6 @@ using namespace std;
 #ifndef __ZgloszenieZakonczenia_hpp__
 #define __ZgloszenieZakonczenia_hpp__
 
-#include "IModel.hpp"
 #include "AbsStrategiaAktualizacjiStanuKursu.hpp"
 
 class IModel;
@@ -23,7 +22,7 @@ namespace Kontroler
 
 		private: bool zatwierdzenieZakonczeniaKursu();
 
-		public: void zakonczenieAktualizacjiStatusu(IModel pModel, int pIdKierowcy, int pIdKursu);
+		public: void zakonczenieAktualizacjiStatusu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu);
 	};
 }
 

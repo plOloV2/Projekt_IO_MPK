@@ -3,7 +3,7 @@
 using namespace std;
 
 #include "AbsDAO.hpp"
-void Model::AbsDAO::dodajWpisDoRejestru(String pZdarzenie) {
+void Model::AbsDAO::dodajWpisDoRejestru(string pZdarzenie) {
 	throw "Not yet implemented";
 }
 

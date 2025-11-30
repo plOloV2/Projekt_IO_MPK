@@ -28,7 +28,7 @@ void Model::Inwentarz::modyfikujKierowce(bool pStatusKierowcy[] ) {
 	throw "Not yet implemented";
 }
 
-Kierowcy* Model::Inwentarz::dajKierowcow(int pIdKursu) {
+Model::Kierowca* Model::Inwentarz::dajKierowcow(int pIdKursu) {
 	throw "Not yet implemented";
 }
 

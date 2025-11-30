@@ -2,11 +2,10 @@
 using namespace std;
 
 #include "KontrolerDystrybutora.hpp"
-#include "AbsModel__1.hpp"
-#include "IModel.hpp"
+#include "AbsModel.hpp"
 #include "AbsKontrolerDystrybutora.hpp"
 
-Kontroler::KontrolerDystrybutora::KontrolerDystrybutora(IModel pModel) {
+Kontroler::KontrolerDystrybutora::KontrolerDystrybutora(Model::AbsModel pModel) {
 }
 
 void Kontroler::KontrolerDystrybutora::modyfikowanieRozkladuJazdy() {
