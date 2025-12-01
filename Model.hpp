@@ -5,12 +5,14 @@ using namespace std;
 #ifndef __Model_hpp__
 #define __Model_hpp__
 
+#include "Inwentarz.hpp"
 #include "AbsDAO.hpp"
 #include "AbsModel.hpp"
 
 namespace Model
 {
 	class AbsDAO;
+	class Inwentarz;
 	//class AbsModel;
 	class Model;
 }
@@ -19,7 +21,9 @@ namespace Model
 {
 	class Model: public AbsModel
 	{
-		private: Model::AbsDAO _dao;
+		private: AbsDAO _dao;
+
+		private: Inwentarz _inwentarz;
 
 		public: void dodawanieKursu();
 

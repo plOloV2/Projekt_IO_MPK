@@ -3,6 +3,7 @@
 using namespace std;
 
 #include "Model.hpp"
+#include "Inwentarz.hpp"
 #include "AbsDAO.hpp"
 #include "AbsModel.hpp"
 

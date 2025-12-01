@@ -8,9 +8,9 @@ using namespace std;
 
 #include "AbsDAO.hpp"
 #include "Kierowca.hpp"
-// #include "Powiadomienie.hpp"
+#include "Powiadomienie.hpp"
 #include "Kurs.hpp"
-// #include "Incydent.hpp"
+#include "Incydent.hpp"
 
 namespace Model
 {
@@ -26,19 +26,19 @@ namespace Model
 {
 	class Inwentarz
 	{
-		private: Model::AbsDAO _dao;
-		private: vector<Model::Kierowca> _kierowcy;
-		private: vector<Model::Powiadomienie> _powiadomienia;
-		private: vector<Model::Kurs> _kursy;
-		private: vector<Model::Incydent> _incydenty;
+		private: AbsDAO _dao;
+		private: vector<Kierowca> _kierowcy;
+		private: vector<Powiadomienie> _powiadomienia;
+		private: vector<Kurs> _kursy;
+		private: vector<Incydent> _incydenty;
 
-		public: Inwentarz(Model::AbsDAO pDao);
+		public: Inwentarz(AbsDAO pDao);
 
 		public: void modyfikujKurs(string pKurs);
 
-		public: Model::Kurs dajKurs(int pIdKursu);
+		public: Kurs dajKurs(int pIdKursu);
 
-		public: Model::Kierowca dajKierowce(int pIdKierowcy);
+		public: Kierowca dajKierowce(int pIdKierowcy);
 
 		public: void modyfikujKierowce(bool pStatusKierowcy[] );
 
@@ -48,7 +48,7 @@ namespace Model
 
 		public: void dodajIncydent(string pIncydent);
 
-		public: Model::Kurs* dajGodzinyPrzyjazdow(int pIdPrzystanku);
+		public: Kurs* dajGodzinyPrzyjazdow(int pIdPrzystanku);
 	};
 }
 
