@@ -21,7 +21,7 @@ namespace Kontroler
 
 		private: bool zatwierdzenieRozpoczeciaKursu();
 
-		public: void zakonczenieAktualizacjiStatusu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu);
+		public: void zakonczenieAktualizacjiKursu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu);
 	};
 }
 

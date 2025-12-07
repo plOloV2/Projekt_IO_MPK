@@ -1,8 +1,11 @@
 #include <exception>
 #include <string>
+#include <vector>
 using namespace std;
 
 #include "Kurs.hpp"
+#include "AbsKurs.hpp"
+
 Model::Kurs::Kurs(int pIdKursu, vector<int> pListaIdPrzystankow , vector<string> pListaGodzinPrzyjazdow ) {
 }
 

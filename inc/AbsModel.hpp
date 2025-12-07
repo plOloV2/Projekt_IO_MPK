@@ -1,5 +1,6 @@
 #include <exception>
 #include <string>
+#include <vector>
 using namespace std;
 
 #ifndef __AbsModel_hpp__
@@ -23,11 +24,11 @@ namespace Model
 
 		public: string znalezienieKierowcy(int pIdKierowcy);
 
-		public: void modyfikacjaKierowcy(bool pStatusKierowcy[] );
+		public: void modyfikacjaKierowcy(vector<bool> pStatusKierowcy );
 
 		public: string* znalezienieKierowcow(int pIdKursow);
 
-		public: void wyslaniePowiadomien(int pIdKierowcow[] , string pPowiadomienie);
+		public: void wyslaniePowiadomien(vector<int> pIdKierowcow , string pPowiadomienie);
 
 		public: void zglaszenieIncydentu(string pIncydent);
 

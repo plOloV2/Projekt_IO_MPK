@@ -24,7 +24,7 @@ namespace Kontroler
 
 		private: string wprowadzenieOpisuIncydentu();
 
-		public: void zakonczenieAktualizacjiStatusu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu);
+		public: void zakonczenieAktualizacjiKursu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu);
 	};
 }
 

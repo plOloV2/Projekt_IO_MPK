@@ -17,7 +17,7 @@ string Kontroler::ZgloszenieIncydentu::wprowadzenieOpisuIncydentu() {
 	throw "Not yet implemented";
 }
 
-void Kontroler::ZgloszenieIncydentu::zakonczenieAktualizacjiStatusu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu) {
+void Kontroler::ZgloszenieIncydentu::zakonczenieAktualizacjiKursu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu) {
 	throw "Not yet implemented";
 }
 

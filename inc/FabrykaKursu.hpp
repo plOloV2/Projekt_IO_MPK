@@ -5,22 +5,24 @@ using namespace std;
 #ifndef __FabrykaKursu_hpp__
 #define __FabrykaKursu_hpp__
 
-#include "Kurs.hpp"
+#include "AbsKurs.hpp"
+#include "AbsFabrykaKursu.hpp"
 
 namespace Model
 {
-	class Kurs;
+	class AbsKurs;
+	// class AbsFabrykaKursu;
 	class FabrykaKursu;
 }
 
 namespace Model
 {
-	class FabrykaKursu
+	class FabrykaKursu: public Model::AbsFabrykaKursu
 	{
 
 		public: FabrykaKursu();
 
-		public: Model::Kurs utworzKurs(string pOpis);
+		public: Model::AbsKurs utworzKurs(string pOpis);
 	};
 }
 

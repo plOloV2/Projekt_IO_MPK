@@ -1,11 +1,15 @@
 #include <exception>
 #include <string>
+#include <vector>
 using namespace std;
 
 #include "Model.hpp"
-#include "Inwentarz.hpp"
 #include "AbsDAO.hpp"
+#include "Inwentarz.hpp"
 #include "AbsModel.hpp"
+
+Model::Model::Model(Inwentarz pInwentarz, AbsDAO pDao) {
+}
 
 void Model::Model::dodawanieKursu() {
 	throw "Not yet implemented";
@@ -23,7 +27,7 @@ string Model::Model::znalezienieKierowcy(int pIdKierowcy) {
 	throw "Not yet implemented";
 }
 
-void Model::Model::modyfikacjaKierowcy(bool pStatusKierowcy[] ) {
+void Model::Model::modyfikacjaKierowcy(vector<bool> pStatusKierowcy ) {
 	throw "Not yet implemented";
 }
 
@@ -31,7 +35,7 @@ string* Model::Model::znalezienieKierowcow(int pIdKursow) {
 	throw "Not yet implemented";
 }
 
-void Model::Model::wyslaniePowiadomien(int pIdKierowcow[] , string pPowiadomienie) {
+void Model::Model::wyslaniePowiadomien(vector<int> pIdKierowcow , string pPowiadomienie) {
 	throw "Not yet implemented";
 }
 

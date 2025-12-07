@@ -1,5 +1,6 @@
 #include <exception>
 #include <string>
+#include <vector>
 using namespace std;
 
 #include "DAO.hpp"
@@ -24,7 +25,7 @@ string Model::DAO::znajdzKurs(int pIdKursu) {
 	throw "Not yet implemented";
 }
 
-void Model::DAO::edytujKierowce(bool pStatusKierowcy[] ) {
+void Model::DAO::edytujKierowce(vector<bool> pStatusKierowcy ) {
 	throw "Not yet implemented";
 }
 
@@ -36,7 +37,7 @@ string* Model::DAO::znajdzKierowcow(int pIdKursu) {
 	throw "Not yet implemented";
 }
 
-void Model::DAO::dodajPowiadomienie(int pIdKierowcow[] , string pPowiadomienie) {
+void Model::DAO::dodajPowiadomienie(vector<int> pIdKierowcow , string pPowiadomienie) {
 	throw "Not yet implemented";
 }
 

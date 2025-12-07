@@ -3,12 +3,13 @@
 using namespace std;
 
 #include "FabrykaKursu.hpp"
-#include "Kurs.hpp"
+#include "AbsKurs.hpp"
+#include "AbsFabrykaKursu.hpp"
 
 Model::FabrykaKursu::FabrykaKursu() {
 }
 
-Model::Kurs Model::FabrykaKursu::utworzKurs(string pOpis) {
+Model::AbsKurs Model::FabrykaKursu::utworzKurs(string pOpis) {
 	throw "Not yet implemented";
 }
 

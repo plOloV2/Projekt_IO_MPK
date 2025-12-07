@@ -1,5 +1,6 @@
 #include <exception>
 #include <string>
+#include <vector>
 using namespace std;
 
 #include "AbsModel.hpp"
@@ -19,7 +20,7 @@ string Model::AbsModel::znalezienieKierowcy(int pIdKierowcy) {
 	throw "Not yet implemented";
 }
 
-void Model::AbsModel::modyfikacjaKierowcy(bool pStatusKierowcy[] ) {
+void Model::AbsModel::modyfikacjaKierowcy(vector<bool> pStatusKierowcy ) {
 	throw "Not yet implemented";
 }
 
@@ -27,7 +28,7 @@ string* Model::AbsModel::znalezienieKierowcow(int pIdKursow) {
 	throw "Not yet implemented";
 }
 
-void Model::AbsModel::wyslaniePowiadomien(int pIdKierowcow[] , string pPowiadomienie) {
+void Model::AbsModel::wyslaniePowiadomien(vector<int> pIdKierowcow , string pPowiadomienie) {
 	throw "Not yet implemented";
 }
 

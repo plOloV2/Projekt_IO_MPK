@@ -1,19 +1,20 @@
 #include <exception>
 #include <string>
+#include <vector>
 using namespace std;
 
 #ifndef __Model_hpp__
 #define __Model_hpp__
 
-#include "Inwentarz.hpp"
 #include "AbsDAO.hpp"
+#include "Inwentarz.hpp"
 #include "AbsModel.hpp"
 
 namespace Model
 {
 	class AbsDAO;
 	class Inwentarz;
-	//class AbsModel;
+	class AbsModel;
 	class Model;
 }
 
@@ -22,8 +23,9 @@ namespace Model
 	class Model: public AbsModel
 	{
 		private: AbsDAO _dao;
-
 		private: Inwentarz _inwentarz;
+
+		public: Model(Inwentarz pInwentarz, AbsDAO pDao);
 
 		public: void dodawanieKursu();
 
@@ -33,11 +35,11 @@ namespace Model
 
 		public: string znalezienieKierowcy(int pIdKierowcy);
 
-		public: void modyfikacjaKierowcy(bool pStatusKierowcy[] );
+		public: void modyfikacjaKierowcy(vector<bool> pStatusKierowcy );
 
 		public: string* znalezienieKierowcow(int pIdKursow);
 
-		public: void wyslaniePowiadomien(int pIdKierowcow[] , string pPowiadomienie);
+		public: void wyslaniePowiadomien(vector<int> pIdKierowcow , string pPowiadomienie);
 
 		public: void zglaszenieIncydentu(string pIncydent);
 

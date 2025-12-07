@@ -12,7 +12,7 @@ bool Kontroler::ZgloszenieZakonczenia::zatwierdzenieZakonczeniaKursu() {
 	throw "Not yet implemented";
 }
 
-void Kontroler::ZgloszenieZakonczenia::zakonczenieAktualizacjiStatusu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu) {
+void Kontroler::ZgloszenieZakonczenia::zakonczenieAktualizacjiKursu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu) {
 	throw "Not yet implemented";
 }
 
