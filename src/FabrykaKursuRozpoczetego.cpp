@@ -4,7 +4,7 @@ using namespace std;
 
 #include "FabrykaKursuRozpoczetego.hpp"
 #include "AbsKurs.hpp"
-#include "FabrykaKursu.hpp"
+#include "AbsFabrykaKursu.hpp"
 
 Model::FabrykaKursuRozpoczetego::FabrykaKursuRozpoczetego(Model::AbsKurs pKurs) {
 }

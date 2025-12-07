@@ -6,18 +6,18 @@ using namespace std;
 #define __FabrykaKursuRozpoczetego_hpp__
 
 #include "AbsKurs.hpp"
-#include "FabrykaKursu.hpp"
+#include "AbsFabrykaKursu.hpp"
 
 namespace Model
 {
 	class AbsKurs;
-	// class FabrykaKursu;
+	// class AbsFabrykaKursu;
 	class FabrykaKursuRozpoczetego;
 }
 
 namespace Model
 {
-	class FabrykaKursuRozpoczetego: public Model::FabrykaKursu
+	class FabrykaKursuRozpoczetego: public Model::AbsFabrykaKursu
 	{
 		private: Model::AbsKurs _kurs;
 

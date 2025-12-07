@@ -11,8 +11,6 @@ using namespace std;
 
 void Kontroler::SystemZarzadzaniaKomunikacjaMiejska::main() {
     cout << "System Zarzadzania Komunikacja Miejska działa!" << endl;
-
-    _kontrolerKierowcy.aktualizacjaStanuKursu();
 }
 
 int main() {
