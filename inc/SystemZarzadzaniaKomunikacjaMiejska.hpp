@@ -23,10 +23,10 @@ namespace Kontroler
 {
 	class SystemZarzadzaniaKomunikacjaMiejska
 	{
-		private: Kontroler::AbsKontrolerPlanera _kontrolerPlanera;
-		private: Kontroler::AbsKontrolerDystrybutora _kontrolerDystrybutora;
-		private: Kontroler::AbsKontrolerTablicy _kontrolerTablicy;
-		private: Kontroler::AbsKontrolerKierowcy _kontrolerKierowcy;
+		//private: Kontroler::AbsKontrolerPlanera _kontrolerPlanera;
+		//private: Kontroler::AbsKontrolerDystrybutora _kontrolerDystrybutora;
+		//private: Kontroler::AbsKontrolerTablicy _kontrolerTablicy;
+		//private: Kontroler::AbsKontrolerKierowcy _kontrolerKierowcy;
 
 		public: void main();
 	};

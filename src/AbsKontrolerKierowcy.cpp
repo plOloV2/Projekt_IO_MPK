@@ -5,6 +5,5 @@ using namespace std;
 #include "AbsKontrolerTablicy.hpp"
 
 void Kontroler::AbsKontrolerKierowcy::aktualizacjaStanuKursu() {
-	throw "Not yet implemented";
 }
 

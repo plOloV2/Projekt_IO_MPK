@@ -17,7 +17,7 @@ namespace Kontroler
 	class ZgloszenieRozpoczecia: public Kontroler::AbsStrategiaAktualizacjiStanuKursu
 	{
 
-		public: void zgloszenieRozpoczecia(int pIdKierowcy, int pIdKursu);
+		public: ZgloszenieRozpoczecia();
 
 		private: bool zatwierdzenieRozpoczeciaKursu();
 

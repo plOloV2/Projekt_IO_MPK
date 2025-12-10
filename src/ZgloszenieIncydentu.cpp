@@ -5,7 +5,7 @@ using namespace std;
 #include "ZgloszenieIncydentu.hpp"
 #include "AbsStrategiaAktualizacjiStanuKursu.hpp"
 
-void Kontroler::ZgloszenieIncydentu::zgloszenieIncydentu(int pIdKierowcy, int pIdKursu) {
+Kontroler::ZgloszenieIncydentu::ZgloszenieIncydentu() {
 	throw "Not yet implemented";
 }
 

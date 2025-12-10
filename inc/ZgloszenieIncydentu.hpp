@@ -18,7 +18,7 @@ namespace Kontroler
 	class ZgloszenieIncydentu: public Kontroler::AbsStrategiaAktualizacjiStanuKursu
 	{
 
-		public: void zgloszenieIncydentu(int pIdKierowcy, int pIdKursu);
+		public: ZgloszenieIncydentu();
 
 		private: int wyborTypuIncydentu();
 

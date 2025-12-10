@@ -18,7 +18,11 @@ namespace Kontroler
 	{
 		private: Kontroler::AbsStrategiaAktualizacjiStanuKursu _strategiaAktualizacjiStanuKursu;
 
-		public: void aktualizacjaStanuKursu();
+		private: Model::AbsModel _absModel;
+
+		private: int _idKierowcy;
+
+		public: AktualizacjaStanuKursu(Model::AbsModel pModel, int pIdKierowcy);
 
 		private: int wprowadzenieIdKursu();
 

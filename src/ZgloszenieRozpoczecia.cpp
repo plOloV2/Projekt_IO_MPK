@@ -4,7 +4,7 @@ using namespace std;
 #include "ZgloszenieRozpoczecia.hpp"
 #include "AbsStrategiaAktualizacjiStanuKursu.hpp"
 
-void Kontroler::ZgloszenieRozpoczecia::zgloszenieRozpoczecia(int pIdKierowcy, int pIdKursu) {
+Kontroler::ZgloszenieRozpoczecia::ZgloszenieRozpoczecia() {
 	throw "Not yet implemented";
 }
 

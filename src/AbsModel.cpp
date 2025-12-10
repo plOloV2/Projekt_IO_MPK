@@ -13,7 +13,7 @@ void Model::AbsModel::modyfikowanieKursu(string pKurs) {
 }
 
 string Model::AbsModel::znalezienieKursu(int pIdKursu) {
-	throw "Not yet implemented";
+	return "Brak";
 }
 
 string Model::AbsModel::znalezienieKierowcy(int pIdKierowcy) {
