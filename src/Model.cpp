@@ -20,7 +20,9 @@ void Model::Model::modyfikowanieKursu(string pKurs) {
 }
 
 string Model::Model::znalezienieKursu(int pIdKursu) {
-	throw "Not yet implemented";
+	Kurs kurs = _inwentarz.dajKurs(pIdKursu);
+	string opisKursu = kurs.opisz();
+	return opisKursu;
 }
 
 string Model::Model::znalezienieKierowcy(int pIdKierowcy) {
