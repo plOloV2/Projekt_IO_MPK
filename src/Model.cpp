@@ -56,7 +56,7 @@ void Model::Model::zarejestrowanieZdarzenia(string pZdarzenie) {
 }
 
 string Model::Model::znalezienieKursuRozpoczetego(int pIdKursu) {
-	Kurs kurs = _inwentarz.dajKursRozpoczety(pIdKursu);
+	KursRozpoczety kurs = _inwentarz.dajKursRozpoczety(pIdKursu);
 	string opisKursu = kurs.opisz();
 	return opisKursu;
 }

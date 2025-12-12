@@ -12,6 +12,7 @@ using namespace std;
 #include "AbsKurs.hpp"
 #include "Incydent.hpp"
 #include "Kurs.hpp"
+#include "KursRozpoczety.hpp"
 
 namespace Model
 {
@@ -22,6 +23,7 @@ namespace Model
 	class Incydent;
 	class Kurs;
 	class Inwentarz;
+	class KursRozpoczety;
 }
 
 namespace Model
