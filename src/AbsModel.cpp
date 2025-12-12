@@ -13,14 +13,14 @@ void Model::AbsModel::modyfikowanieKursu(string pKurs) {
 }
 
 string Model::AbsModel::znalezienieKursu(int pIdKursu) {
-	return "Brak";
+	throw "Not yet implemented";
 }
 
 string Model::AbsModel::znalezienieKierowcy(int pIdKierowcy) {
 	throw "Not yet implemented";
 }
 
-void Model::AbsModel::modyfikacjaKierowcy(vector<bool> pStatusKierowcy ) {
+void Model::AbsModel::modyfikacjaKierowcy(int pIdKierowcy) {
 	throw "Not yet implemented";
 }
 
@@ -44,3 +44,6 @@ void Model::AbsModel::zarejestrowanieZdarzenia(string pZdarzenie) {
 	throw "Not yet implemented";
 }
 
+string Model::AbsModel::znalezienieKursuRozpoczetego(int pIdKursu) {
+	throw "Not yet implemented";
+}

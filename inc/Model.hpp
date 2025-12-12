@@ -35,7 +35,7 @@ namespace Model
 
 		public: string znalezienieKierowcy(int pIdKierowcy);
 
-		public: void modyfikacjaKierowcy(vector<bool> pStatusKierowcy );
+		public: void modyfikacjaKierowcy(int pIdKierowcy);
 
 		public: string* znalezienieKierowcow(int pIdKursow);
 
@@ -46,6 +46,8 @@ namespace Model
 		public: string* znajdzGodzinyPrzyjazdow(int pIdPrzystanku);
 
 		public: void zarejestrowanieZdarzenia(string pZdarzenie);
+
+		public: string znalezienieKursuRozpoczetego(int pIdKursu);
 	};
 }
 

@@ -4,17 +4,20 @@ using namespace std;
 
 #include "Kierowca.hpp"
 Model::Kierowca::Kierowca(int pIdKierowcy, int pIdKursu) {
+	this->_idKierowcy = pIdKierowcy;
+	this->_idKursu = pIdKursu;
 }
 
 int Model::Kierowca::dajIdKierowcy() {
-	throw "Not yet implemented";
+	return _idKierowcy;
 }
 
 int Model::Kierowca::dajIdKursu() {
-	throw "Not yet implemented";
+	return _idKursu;
 }
 
 string Model::Kierowca::opisz() {
-	throw "Not yet implemented";
+	string opis = to_string(_idKierowcy) + ";" + to_string(_idKursu) + ";";
+	return opis;
 }
 

@@ -10,6 +10,8 @@ using namespace std;
 #include "AbsKurs.hpp"
 #include "Incydent.hpp"
 #include "Kurs.hpp"
+#include "KursRozpoczety.hpp"
+#include "Kierowca.hpp"
 
 Model::Inwentarz::Inwentarz() {
 }
@@ -22,14 +24,17 @@ void Model::Inwentarz::modyfikujKurs(string pKurs) {
 }
 
 Model::Kurs Model::Inwentarz::dajKurs(int pIdKursu) {
-	throw "Not yet implemented";
+	vector<int> listaPrzystankow;
+	vector<string> listaGodzinPrzyjazdow;
+	return Kurs(pIdKursu, listaPrzystankow, listaGodzinPrzyjazdow);
 }
 
 Model::Kierowca Model::Inwentarz::dajKierowce(int pIdKierowcy) {
-	throw "Not yet implemented";
+	int idKursu = INT_MAX;
+	return Kierowca(pIdKierowcy, idKursu);
 }
 
-void Model::Inwentarz::modyfikujKierowce(vector<bool> pStatusKierowcy ) {
+void Model::Inwentarz::modyfikujKierowce(int pIdKierowcy) {
 	throw "Not yet implemented";
 }
 
@@ -49,3 +54,10 @@ Model::Kurs* Model::Inwentarz::dajGodzinyPrzyjazdow(int pIdPrzystanku) {
 	throw "Not yet implemented";
 }
 
+Model::KursRozpoczety Model::Inwentarz::dajKursRozpoczety(int pIdKursu) {
+	vector<int> listaPrzystankow;
+	vector<string> listaGodzinPrzyjazdow;
+	Kurs kurs(pIdKursu, listaPrzystankow, listaGodzinPrzyjazdow);
+	int idKierowcy = rand() % 10;
+	return KursRozpoczety(kurs, idKierowcy);
+}

@@ -44,7 +44,7 @@ namespace Model
 
 		public: Kierowca dajKierowce(int pIdKierowcy);
 
-		public: void modyfikujKierowce(vector<bool> pStatusKierowcy );
+		public: void modyfikujKierowce(int pIdKierowcy);
 
 		public: Kierowca* dajKierowcow(int pIdKursu);
 
@@ -53,6 +53,8 @@ namespace Model
 		public: void dodajIncydent(string pIncydent);
 
 		public: Kurs* dajGodzinyPrzyjazdow(int pIdPrzystanku);
+
+		public: KursRozpoczety dajKursRozpoczety(int pIdKursu);
 	};
 }
 

@@ -26,11 +26,13 @@ string Model::Model::znalezienieKursu(int pIdKursu) {
 }
 
 string Model::Model::znalezienieKierowcy(int pIdKierowcy) {
-	throw "Not yet implemented";
+	Kierowca kierowca = _inwentarz.dajKierowce(pIdKierowcy);
+	string opisKierowcy = kierowca.opisz();
+	return opisKierowcy;
 }
 
-void Model::Model::modyfikacjaKierowcy(vector<bool> pStatusKierowcy ) {
-	throw "Not yet implemented";
+void Model::Model::modyfikacjaKierowcy(int pIdKierowcy) {
+	
 }
 
 string* Model::Model::znalezienieKierowcow(int pIdKursow) {
@@ -53,3 +55,8 @@ void Model::Model::zarejestrowanieZdarzenia(string pZdarzenie) {
 	throw "Not yet implemented";
 }
 
+string Model::Model::znalezienieKursuRozpoczetego(int pIdKursu) {
+	Kurs kurs = _inwentarz.dajKursRozpoczety(pIdKursu);
+	string opisKursu = kurs.opisz();
+	return opisKursu;
+}
