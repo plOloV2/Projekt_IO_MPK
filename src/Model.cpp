@@ -16,7 +16,7 @@ void Model::Model::dodawanieKursu() {
 }
 
 void Model::Model::modyfikowanieKursu(string pKurs) {
-	throw "Not yet implemented";
+	_inwentarz.modyfikujKurs(pKurs);
 }
 
 string Model::Model::znalezienieKursu(int pIdKursu) {
@@ -32,7 +32,7 @@ string Model::Model::znalezienieKierowcy(int pIdKierowcy) {
 }
 
 void Model::Model::modyfikacjaKierowcy(int pIdKierowcy) {
-	
+	_inwentarz.modyfikujKierowce(pIdKierowcy);
 }
 
 string* Model::Model::znalezienieKierowcow(int pIdKursow) {
@@ -44,7 +44,7 @@ void Model::Model::wyslaniePowiadomien(vector<int> pIdKierowcow , string pPowiad
 }
 
 void Model::Model::zglaszenieIncydentu(string pIncydent) {
-	throw "Not yet implemented";
+	_inwentarz.dodajIncydent(pIncydent);
 }
 
 string* Model::Model::znajdzGodzinyPrzyjazdow(int pIdPrzystanku) {

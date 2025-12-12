@@ -16,15 +16,15 @@ bool Kontroler::ZgloszenieRozpoczecia::zatwierdzenieRozpoczeciaKursu() {
 
 void Kontroler::ZgloszenieRozpoczecia::zakonczenieAktualizacjiKursu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu) {
 	string opisKursu = pModel.znalezienieKursuRozpoczetego(pIdKursu);
-	if(opisKursu != "Brak"){
+	if(opisKursu == "Brak"){
 		string opisKierowcy = pModel.znalezienieKierowcy(pIdKierowcy);
 		vector<string> atrybutyKierowcy;
-		stringstream ss(opisKierowcy);
+		stringstream streamKierowcy(opisKierowcy);
 		string helper;
-		while(getline(ss, helper, ';')){
+		while(getline(streamKierowcy, helper, ';')){
 			atrybutyKierowcy.push_back(helper);
 		}
-		if(stoi(atrybutyKierowcy.at(1)) == INT_MAX) {
+		if(stoi(atrybutyKierowcy.at(1)) != pIdKursu) {
 			bool decyzja = zatwierdzenieRozpoczeciaKursu();
 			if(decyzja){
 				pModel.modyfikacjaKierowcy(pIdKursu);

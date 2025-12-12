@@ -1,6 +1,7 @@
 #include <exception>
 #include <string>
 #include <vector>
+#include <iostream>
 using namespace std;
 
 #include "Inwentarz.hpp"
@@ -20,7 +21,7 @@ Model::Inwentarz::Inwentarz(AbsDAO pDao) {
 }
 
 void Model::Inwentarz::modyfikujKurs(string pKurs) {
-	throw "Not yet implemented";
+	cout << "Zmodyfikowano kurs\n";
 }
 
 Model::Kurs Model::Inwentarz::dajKurs(int pIdKursu) {
@@ -35,7 +36,7 @@ Model::Kierowca Model::Inwentarz::dajKierowce(int pIdKierowcy) {
 }
 
 void Model::Inwentarz::modyfikujKierowce(int pIdKierowcy) {
-	throw "Not yet implemented";
+	cout << "Zmodyfikowano kierowce\n";
 }
 
 Model::Kierowca* Model::Inwentarz::dajKierowcow(int pIdKursu) {
@@ -47,7 +48,7 @@ void Model::Inwentarz::dodajPowiadomienie(vector<int> pIdKierowcow , string pPow
 }
 
 void Model::Inwentarz::dodajIncydent(string pIncydent) {
-	throw "Not yet implemented";
+	cout << "Dodano incydent\n";
 }
 
 Model::Kurs* Model::Inwentarz::dajGodzinyPrzyjazdow(int pIdPrzystanku) {
