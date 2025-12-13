@@ -18,9 +18,11 @@ namespace Kontroler
 	{
 		private: Model::AbsModel _absModel;
 
-		public: void odbiorInformacjiOGodzinachPrzyjazdow(Model::AbsModel pModel, int pIdKursu);
+		public: OdbiorInformacjiOGodzinachPrzyjazdow(Model::AbsModel pModel);
 
-		public: void odbiorInformacjiOGodzinachPrzyjazdow2(Model::AbsModel pModel, int pIdPrzystanku);
+		public: void odbiorInformacjiOGodzinachPrzyjazdow(int pIdKursu);
+
+		public: void odbiorInformacjiOGodzinachPrzyjazdow2(int pIdPrzystanku);
 	};
 }
 

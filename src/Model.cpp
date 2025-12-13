@@ -47,8 +47,13 @@ void Model::Model::zglaszenieIncydentu(string pIncydent) {
 	_inwentarz.dodajIncydent(pIncydent);
 }
 
-string* Model::Model::znajdzGodzinyPrzyjazdow(int pIdPrzystanku) {
-	throw "Not yet implemented";
+vector<string> Model::Model::znajdzGodzinyPrzyjazdow(int pIdPrzystanku) {
+	vector<Kurs> kursy = _inwentarz.dajGodzinyPrzyjazdow(pIdPrzystanku);
+	vector<string> opisyKursow;
+	for(int i = 0; i < kursy.size(); i++){
+		opisyKursow.push_back(kursy.at(i).opisz());
+	}
+	return opisyKursow;
 }
 
 void Model::Model::zarejestrowanieZdarzenia(string pZdarzenie) {

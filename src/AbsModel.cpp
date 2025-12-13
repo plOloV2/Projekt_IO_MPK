@@ -36,7 +36,7 @@ void Model::AbsModel::zglaszenieIncydentu(string pIncydent) {
 	throw "Not yet implemented";
 }
 
-string* Model::AbsModel::znajdzGodzinyPrzyjazdow(int pIdPrzystanku) {
+vector<string> Model::AbsModel::znajdzGodzinyPrzyjazdow(int pIdPrzystanku) {
 	throw "Not yet implemented";
 }
 

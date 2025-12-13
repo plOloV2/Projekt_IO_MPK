@@ -54,7 +54,7 @@ namespace Model
 
 		public: void dodajIncydent(string pIncydent);
 
-		public: Kurs* dajGodzinyPrzyjazdow(int pIdPrzystanku);
+		public: vector<Kurs> dajGodzinyPrzyjazdow(int pIdPrzystanku);
 
 		public: KursRozpoczety dajKursRozpoczety(int pIdKursu);
 	};

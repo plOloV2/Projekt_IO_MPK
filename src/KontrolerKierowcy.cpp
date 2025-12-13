@@ -5,8 +5,10 @@ using namespace std;
 #include "AbsModel.hpp"
 #include "AbsKontrolerKierowcy.hpp"
 #include "AktualizacjaStanuKursu.hpp"
+#include "OdbiorInformacjiOGodzinachPrzyjazdow.hpp"
 
 Kontroler::KontrolerKierowcy::KontrolerKierowcy(Model::AbsModel pModel) {
+	this->_absModel = pModel;
 }
 
 void Kontroler::KontrolerKierowcy::aktualizacjaStanuKursu() {
@@ -15,6 +17,8 @@ void Kontroler::KontrolerKierowcy::aktualizacjaStanuKursu() {
 }
 
 void Kontroler::KontrolerKierowcy::odbiorInformacjiOGodzinachPrzyjazdow() {
-	throw "Not yet implemented";
+	int idKursu = 0;
+	OdbiorInformacjiOGodzinachPrzyjazdow oiogp = OdbiorInformacjiOGodzinachPrzyjazdow(_absModel);
+	oiogp.odbiorInformacjiOGodzinachPrzyjazdow(idKursu);
 }
 

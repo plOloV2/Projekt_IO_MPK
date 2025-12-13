@@ -32,7 +32,7 @@ namespace Model
 
 		public: void zglaszenieIncydentu(string pIncydent);
 
-		public: string* znajdzGodzinyPrzyjazdow(int pIdPrzystanku);
+		public: vector<string> znajdzGodzinyPrzyjazdow(int pIdPrzystanku);
 
 		public: void zarejestrowanieZdarzenia(string pZdarzenie);
 

@@ -51,8 +51,9 @@ void Model::Inwentarz::dodajIncydent(string pIncydent) {
 	cout << "Dodano incydent\n";
 }
 
-Model::Kurs* Model::Inwentarz::dajGodzinyPrzyjazdow(int pIdPrzystanku) {
-	throw "Not yet implemented";
+vector<Model::Kurs> Model::Inwentarz::dajGodzinyPrzyjazdow(int pIdPrzystanku) {
+	vector<Model::Kurs> godzinyPrzyjazdow;
+	return godzinyPrzyjazdow;
 }
 
 Model::KursRozpoczety Model::Inwentarz::dajKursRozpoczety(int pIdKursu) {
