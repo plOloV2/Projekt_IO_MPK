@@ -8,7 +8,7 @@ void Model::AbsDAO::dodajWpisDoRejestru(string pZdarzenie) {
 	throw "Not yet implemented";
 }
 
-int Model::AbsDAO::dodajKurs() {
+int Model::AbsDAO::dodajKurs(string pKurs) {
 	throw "Not yet implemented";
 }
 
@@ -20,7 +20,7 @@ string Model::AbsDAO::znajdzKurs(int pIdKursu) {
 	throw "Not yet implemented";
 }
 
-void Model::AbsDAO::edytujKierowce(vector<bool> pStatusKierowcy ) {
+void Model::AbsDAO::edytujKierowce(int pIdKierowcy, int pIdKursu) {
 	throw "Not yet implemented";
 }
 
@@ -28,7 +28,7 @@ string Model::AbsDAO::znajdzKierowce(int pIdKierowcy) {
 	throw "Not yet implemented";
 }
 
-string* Model::AbsDAO::znajdzKierowcow(int pIdKursu) {
+vector<string> Model::AbsDAO::znajdzKierowcow(int pIdKursu) {
 	throw "Not yet implemented";
 }
 
@@ -36,7 +36,7 @@ void Model::AbsDAO::dodajPowiadomienie(vector<int> pIdKierowcow , string pPowiad
 	throw "Not yet implemented";
 }
 
-string* Model::AbsDAO::znajdzPowiadomienia(int pIdKierowcy) {
+vector<string> Model::AbsDAO::znajdzPowiadomienia(int pIdKierowcy) {
 	throw "Not yet implemented";
 }
 
@@ -44,7 +44,7 @@ void Model::AbsDAO::dodajIncydent(string pIncydent) {
 	throw "Not yet implemented";
 }
 
-string* Model::AbsDAO::znajdzIncydenty() {
+vector<string> Model::AbsDAO::znajdzIncydenty() {
 	throw "Not yet implemented";
 }
 

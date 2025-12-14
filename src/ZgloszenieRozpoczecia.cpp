@@ -25,7 +25,7 @@ void Kontroler::ZgloszenieRozpoczecia::zakonczenieAktualizacjiKursu(Model::AbsMo
 		while(getline(streamKierowcy, helper, ';')){
 			atrybutyKierowcy.push_back(helper);
 		}
-		if(stoi(atrybutyKierowcy.at(1)) != pIdKursu) {
+		if(stoi(atrybutyKierowcy.at(1)) != -1) {
 			bool decyzja = zatwierdzenieRozpoczeciaKursu();
 			if(decyzja){
 				pModel->modyfikacjaKierowcy(pIdKursu);
