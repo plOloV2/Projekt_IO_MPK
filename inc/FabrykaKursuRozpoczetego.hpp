@@ -19,11 +19,11 @@ namespace Model
 {
 	class FabrykaKursuRozpoczetego: public Model::AbsFabrykaKursu
 	{
-		private: Model::AbsKurs _kurs;
+		private: Model::AbsKurs* _kurs;
 
-		public: FabrykaKursuRozpoczetego(Model::AbsKurs pKurs);
+		public: FabrykaKursuRozpoczetego(Model::AbsKurs* pKurs);
 
-		public: Model::AbsKurs utworzKurs(string pOpis);
+		public: Model::AbsKurs* utworzKurs(string pOpis);
 	};
 }
 

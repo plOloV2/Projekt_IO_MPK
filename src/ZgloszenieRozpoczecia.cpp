@@ -8,7 +8,6 @@ using namespace std;
 #include "Model.hpp"
 
 Kontroler::ZgloszenieRozpoczecia::ZgloszenieRozpoczecia() {
-	cout << "Constructor\n";
 }
 
 bool Kontroler::ZgloszenieRozpoczecia::zatwierdzenieRozpoczeciaKursu() {
@@ -16,7 +15,7 @@ bool Kontroler::ZgloszenieRozpoczecia::zatwierdzenieRozpoczeciaKursu() {
 }
 
 void Kontroler::ZgloszenieRozpoczecia::zakonczenieAktualizacjiKursu(Model::AbsModel* pModel, int pIdKierowcy, int pIdKursu) {
-	cout << "zakonczenieAktualizacjiKursu()\n";
+	cout << "Rozpoczynanie kursu\n";
 	string opisKursu = pModel->znalezienieKursuRozpoczetego(pIdKursu);
 	if(opisKursu == "Brak"){
 		string opisKierowcy = pModel->znalezienieKierowcy(pIdKierowcy);
@@ -41,5 +40,6 @@ void Kontroler::ZgloszenieRozpoczecia::zakonczenieAktualizacjiKursu(Model::AbsMo
 	else{
 		cout << "Kurs zostal juz rozpoczety\n";
 	}
+	cout << "Kurs zostal rozpoczety\n";
 }
 

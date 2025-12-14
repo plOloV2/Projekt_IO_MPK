@@ -9,7 +9,7 @@ using namespace std;
 Model::FabrykaKursu::FabrykaKursu() {
 }
 
-Model::AbsKurs Model::FabrykaKursu::utworzKurs(string pOpis) {
+Model::AbsKurs* Model::FabrykaKursu::utworzKurs(string pOpis) {
 	throw "Not yet implemented";
 }
 

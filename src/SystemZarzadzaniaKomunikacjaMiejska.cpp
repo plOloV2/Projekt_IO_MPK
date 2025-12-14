@@ -9,20 +9,28 @@ using namespace std;
 #include "AbsKontrolerTablicy.hpp"
 #include "AbsKontrolerKierowcy.hpp"
 #include "KontrolerKierowcy.hpp"
+#include "KontrolerTablicy.hpp"
 #include "Model.hpp"
 
 void Kontroler::SystemZarzadzaniaKomunikacjaMiejska::main() {
-    cout << "System Zarzadzania Komunikacja Miejska działa!" << endl;
+    cout << "System Zarzadzania Komunikacja Miejska dziala!" << endl;
 
     Model::AbsDAO dao;
     Model::Inwentarz inwentarz;
     Model::Model model(inwentarz, dao);
 
     KontrolerKierowcy _kontrolerKierowcy(&model);
-    _kontrolerKierowcy.aktualizacjaStanuKursu();
+    KontrolerTablicy _kontrolerTablicy(&model);
+    for(int i = 0; i < 10; i++) {
+        _kontrolerKierowcy.aktualizacjaStanuKursu();
+    }
+    _kontrolerKierowcy.odbiorInformacjiOGodzinachPrzyjazdow();
+    _kontrolerTablicy.odbiorInformacjiOGodzinachPrzyjazdow();
+
 }
 
 int main() {
+    srand(time(0));
     Kontroler::SystemZarzadzaniaKomunikacjaMiejska app;
     app.main();
     return 0;

@@ -7,7 +7,6 @@ using namespace std;
 #include "AbsStrategiaAktualizacjiStanuKursu.hpp"
 
 Kontroler::ZgloszenieZakonczenia::ZgloszenieZakonczenia() {
-	cout << "Constructor\n";
 }
 
 bool Kontroler::ZgloszenieZakonczenia::zatwierdzenieZakonczeniaKursu() {
@@ -15,7 +14,7 @@ bool Kontroler::ZgloszenieZakonczenia::zatwierdzenieZakonczeniaKursu() {
 }
 
 void Kontroler::ZgloszenieZakonczenia::zakonczenieAktualizacjiKursu(Model::AbsModel* pModel, int pIdKierowcy, int pIdKursu) {
-	cout << "zakonczenieAktualizacjiKursu()\n";
+	cout << "Konczenie kursu\n";
 	string opisKursu = pModel->znalezienieKursuRozpoczetego(pIdKursu);
 	if(opisKursu != "Brak"){
 		string opisKierowcy = pModel->znalezienieKierowcy(pIdKierowcy);
@@ -46,5 +45,6 @@ void Kontroler::ZgloszenieZakonczenia::zakonczenieAktualizacjiKursu(Model::AbsMo
 	else{
 		cout << "Kurs o tym ID nie zostal rozpoczety\n";
 	}
+	cout << "Kurs zostal zakonczony\n";
 }
 

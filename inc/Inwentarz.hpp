@@ -33,7 +33,7 @@ namespace Model
 		private: AbsDAO _dao;
 		private: vector<Kierowca> _kierowcy;
 		private: vector<Powiadomienie> _powiadomienia;
-		private: vector<AbsKurs> _kursy;
+		private: vector<AbsKurs*> _kursy;
 		private: vector<Incydent> _incydenty;
 
 		public: Inwentarz();

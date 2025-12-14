@@ -17,13 +17,13 @@ namespace Model
 	{
 		public: virtual ~AbsKurs() = default;
 
-		public: virtual int dajIdKursu();
+		public: virtual int dajIdKursu() = 0;
 
-		public: virtual vector<int> dajListaIdPrzystankow();
+		public: virtual vector<int> dajListaIdPrzystankow() = 0;
 
-		public: virtual vector<string> dajListaGodzinPrzyjazdow();
+		public: virtual vector<string> dajListaGodzinPrzyjazdow() = 0;
 
-		public: virtual string opisz();
+		public: virtual string opisz() = 0;
 	};
 }
 

@@ -8,7 +8,6 @@ using namespace std;
 #include "AbsStrategiaAktualizacjiStanuKursu.hpp"
 
 Kontroler::ZgloszenieIncydentu::ZgloszenieIncydentu() {
-	cout << "Constructor\n";
 }
 
 int Kontroler::ZgloszenieIncydentu::wyborTypuIncydentu() {
@@ -20,7 +19,7 @@ string Kontroler::ZgloszenieIncydentu::wprowadzenieOpisuIncydentu() {
 }
 
 void Kontroler::ZgloszenieIncydentu::zakonczenieAktualizacjiKursu(Model::AbsModel* pModel, int pIdKierowcy, int pIdKursu) {
-	cout << "zakonczenieAktualizacjiKursu()\n";
+	cout << "Zglaszanie incydentu\n";
 	string opisKursu = pModel->znalezienieKursuRozpoczetego(pIdKursu);
 	if(opisKursu != "Brak"){
 		string opisKierowcy = pModel->znalezienieKierowcy(pIdKierowcy);
@@ -42,5 +41,6 @@ void Kontroler::ZgloszenieIncydentu::zakonczenieAktualizacjiKursu(Model::AbsMode
 	else{
 		cout << "Kurs o tym ID nie zostal rozpoczety\n";
 	}
+	cout << "Incydent zostal zgloszony\n";
 }
 

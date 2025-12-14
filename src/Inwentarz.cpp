@@ -25,7 +25,6 @@ void Model::Inwentarz::modyfikujKurs(string pKurs) {
 }
 
 Model::Kurs Model::Inwentarz::dajKurs(int pIdKursu) {
-	cout << "dajKurs()\n";
 	vector<int> listaPrzystankow;
 	vector<string> listaGodzinPrzyjazdow;
 	return Kurs(pIdKursu, listaPrzystankow, listaGodzinPrzyjazdow);
@@ -58,10 +57,9 @@ vector<Model::Kurs> Model::Inwentarz::dajGodzinyPrzyjazdow(int pIdPrzystanku) {
 }
 
 Model::KursRozpoczety Model::Inwentarz::dajKursRozpoczety(int pIdKursu) {
-	cout << "dajKursRozpoczety()\n";
 	vector<int> listaPrzystankow;
 	vector<string> listaGodzinPrzyjazdow;
-	Kurs kurs(pIdKursu, listaPrzystankow, listaGodzinPrzyjazdow);
+	Kurs* kurs = new Kurs(pIdKursu, listaPrzystankow, listaGodzinPrzyjazdow);
 	int idKierowcy = rand() % 10;
-	return KursRozpoczety(&kurs, idKierowcy);
+	return KursRozpoczety(kurs, idKierowcy);
 }

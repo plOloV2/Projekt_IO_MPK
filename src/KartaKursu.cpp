@@ -11,12 +11,11 @@ Model::KartaKursu::KartaKursu(Model::AbsKurs* pKurs) {
 }
 
 int Model::KartaKursu::dajIdKursu() {
-	throw _kurs->dajIdKursu();
+	return _kurs->dajIdKursu();
 }
 
 vector<int> Model::KartaKursu::dajListaIdPrzystankow() {
-	cout << "dajListaIdPrzystankow()\n";
-	throw _kurs->dajListaIdPrzystankow();
+	return _kurs->dajListaIdPrzystankow();
 }
 
 vector<string> Model::KartaKursu::dajListaGodzinPrzyjazdow() {

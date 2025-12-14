@@ -14,19 +14,18 @@ Model::Kurs::Kurs(int pIdKursu, vector<int> pListaIdPrzystankow , vector<string>
 }
 
 int Model::Kurs::dajIdKursu() {
-	throw "Not yet implemented";
+	return _idKursu;
 }
 
 vector<int> Model::Kurs::dajListaIdPrzystankow() {
-	throw "Not yet implemented";
+	return _listaIdPrzystankow;
 }
 
 vector<string> Model::Kurs::dajListaGodzinPrzyjazdow() {
-	throw "Not yet implemented";
+	return _listaGodzinPrzyjazdow;
 }
 
 string Model::Kurs::opisz() {
-	cout << "opisz()\n";
 	string opisKursu = to_string(_idKursu) + ';';
 	for (int i = 0; i < _listaIdPrzystankow.size(); i++){
 		opisKursu = opisKursu + ',' + to_string(_listaIdPrzystankow.at(i));

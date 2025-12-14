@@ -12,6 +12,7 @@ Kontroler::OdbiorInformacjiOGodzinachPrzyjazdow::OdbiorInformacjiOGodzinachPrzyj
 }
 
 void Kontroler::OdbiorInformacjiOGodzinachPrzyjazdow::odbiorInformacjiOGodzinachPrzyjazdow(int pIdKursu) {
+	cout << "Odbieranie informacji o godzinach przyjazdu\n";
 	string opisKursu = _absModel->znalezienieKursu(pIdKursu);
 	vector<string> atrybutyKursu;
 	stringstream streamKursu(opisKursu);
@@ -32,9 +33,11 @@ void Kontroler::OdbiorInformacjiOGodzinachPrzyjazdow::odbiorInformacjiOGodzinach
 	for(int i = 0; i < listaIdPrzystankow.size(); i++){
 		cout << "Przystanek " << listaIdPrzystankow.at(i) << ": " << listaGodzinPrzyjazdow.at(i) << endl;
 	}
+	cout << "Odebrano informacjie o godzinach przyjazdu\n";
 }
 
 void Kontroler::OdbiorInformacjiOGodzinachPrzyjazdow::odbiorInformacjiOGodzinachPrzyjazdow2(int pIdPrzystanku) {
+	cout << "Odbieranie informacji o godzinach przyjazdu\n";
 	vector<string> opisyKursow = _absModel->znajdzGodzinyPrzyjazdow(pIdPrzystanku);
 	for(int i = 0; i < opisyKursow.size(); i++){
 		vector<string> atrybutyKursu;
@@ -56,5 +59,6 @@ void Kontroler::OdbiorInformacjiOGodzinachPrzyjazdow::odbiorInformacjiOGodzinach
 		auto iterator = find(listaIdPrzystankow.begin(), listaIdPrzystankow.end(), to_string(pIdPrzystanku));
 		cout << "Kurs " << atrybutyKursu.at(0) << ": " << listaGodzinPrzyjazdow.at(distance(listaIdPrzystankow.begin(), iterator)) << endl;
 	}
+	cout << "Odebrano informacjie o godzinach przyjazdu\n";
 }
 

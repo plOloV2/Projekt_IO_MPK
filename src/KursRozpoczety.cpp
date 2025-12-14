@@ -8,13 +8,9 @@ using namespace std;
 #include "AbsKurs.hpp"
 #include "KartaKursu.hpp"
 
-Model::KursRozpoczety::KursRozpoczety(Model::AbsKurs* pKurs, int pIdKierowcy) : Model::KartaKursu(pKurs), _idKierowcy(pIdKierowcy) {
-	this->_kurs = pKurs;
-	this->_idKierowcy = pIdKierowcy;
-}
+Model::KursRozpoczety::KursRozpoczety(Model::AbsKurs* pKurs, int pIdKierowcy) : Model::KartaKursu(pKurs), _idKierowcy(pIdKierowcy) {}
 
 string Model::KursRozpoczety::opisz() {
-	cout << "opisz()R\n";
 	string opisKursu = to_string(_kurs->dajIdKursu()) + ';';
 	for (int i = 0; i < _kurs->dajListaIdPrzystankow().size(); i++){
 		opisKursu = opisKursu + ',' + to_string(_kurs->dajListaIdPrzystankow().at(i));

@@ -21,7 +21,6 @@ void Model::Model::modyfikowanieKursu(string pKurs)  {
 }
 
 string Model::Model::znalezienieKursu(int pIdKursu)  {
-	cout << "znalezienieKursu()\n";
 	Kurs kurs = _inwentarz.dajKurs(pIdKursu);
 	string opisKursu = kurs.opisz();
 	return opisKursu;
@@ -63,9 +62,7 @@ void Model::Model::zarejestrowanieZdarzenia(string pZdarzenie)  {
 }
 
 string Model::Model::znalezienieKursuRozpoczetego(int pIdKursu)  {
-	cout << "znalezienieKursuRozpoczetego()\n";
 	KursRozpoczety kurs = _inwentarz.dajKursRozpoczety(pIdKursu);
 	string opisKursu = kurs.opisz();
-	cout << opisKursu << endl;
 	return opisKursu;
 }

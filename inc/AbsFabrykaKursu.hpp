@@ -18,7 +18,7 @@ namespace Model
 	class AbsFabrykaKursu
 	{
 
-		public: Model::AbsKurs utworzKurs(string pOpis);
+		public: Model::AbsKurs* utworzKurs(string pOpis);
 	};
 }
 

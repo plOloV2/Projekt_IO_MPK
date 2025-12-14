@@ -22,7 +22,7 @@ namespace Model
 
 		public: FabrykaKursu();
 
-		public: Model::AbsKurs utworzKurs(string pOpis);
+		public: Model::AbsKurs* utworzKurs(string pOpis);
 	};
 }
 
