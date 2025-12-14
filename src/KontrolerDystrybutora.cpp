@@ -5,7 +5,7 @@ using namespace std;
 #include "AbsModel.hpp"
 #include "AbsKontrolerDystrybutora.hpp"
 
-Kontroler::KontrolerDystrybutora::KontrolerDystrybutora(Model::AbsModel pModel) {
+Kontroler::KontrolerDystrybutora::KontrolerDystrybutora(Model::AbsModel* pModel) {
 }
 
 void Kontroler::KontrolerDystrybutora::modyfikowanieRozkladuJazdy() {

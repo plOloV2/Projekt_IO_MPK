@@ -8,7 +8,7 @@ using namespace std;
 #include "AbsStrategiaAktualizacjiStanuKursu.hpp"
 
 Kontroler::ZgloszenieIncydentu::ZgloszenieIncydentu() {
-	throw "Not yet implemented";
+	cout << "Constructor\n";
 }
 
 int Kontroler::ZgloszenieIncydentu::wyborTypuIncydentu() {
@@ -19,10 +19,11 @@ string Kontroler::ZgloszenieIncydentu::wprowadzenieOpisuIncydentu() {
 	return "Przykladowy opis incydentu...";
 }
 
-void Kontroler::ZgloszenieIncydentu::zakonczenieAktualizacjiKursu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu) {
-	string opisKursu = pModel.znalezienieKursuRozpoczetego(pIdKursu);
+void Kontroler::ZgloszenieIncydentu::zakonczenieAktualizacjiKursu(Model::AbsModel* pModel, int pIdKierowcy, int pIdKursu) {
+	cout << "zakonczenieAktualizacjiKursu()\n";
+	string opisKursu = pModel->znalezienieKursuRozpoczetego(pIdKursu);
 	if(opisKursu != "Brak"){
-		string opisKierowcy = pModel.znalezienieKierowcy(pIdKierowcy);
+		string opisKierowcy = pModel->znalezienieKierowcy(pIdKierowcy);
 		vector<string> atrybutyKierowcy;
 		stringstream streamKierowcy(opisKierowcy);
 		string helper;
@@ -32,7 +33,7 @@ void Kontroler::ZgloszenieIncydentu::zakonczenieAktualizacjiKursu(Model::AbsMode
 		if(stoi(atrybutyKierowcy.at(1)) == pIdKursu) {
 			int typIncydentu = wyborTypuIncydentu();
 			string opisIncydentu = wprowadzenieOpisuIncydentu();
-			pModel.zglaszenieIncydentu(to_string(typIncydentu) + ';' + opisIncydentu + ';');
+			pModel->zglaszenieIncydentu(to_string(typIncydentu) + ';' + opisIncydentu + ';');
 		}
 		else{
 			cout << "Kierowca nie posiada rozpoczetego kursu\n";

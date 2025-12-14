@@ -4,46 +4,46 @@
 using namespace std;
 
 #include "AbsModel.hpp"
-void Model::AbsModel::dodawanieKursu() {
+void Model::AbsModel::dodawanieKursu()  {
 	throw "Not yet implemented";
 }
 
-void Model::AbsModel::modyfikowanieKursu(string pKurs) {
+void Model::AbsModel::modyfikowanieKursu(string pKurs)  {
 	throw "Not yet implemented";
 }
 
-string Model::AbsModel::znalezienieKursu(int pIdKursu) {
+string Model::AbsModel::znalezienieKursu(int pIdKursu)  {
 	throw "Not yet implemented";
 }
 
-string Model::AbsModel::znalezienieKierowcy(int pIdKierowcy) {
+string Model::AbsModel::znalezienieKierowcy(int pIdKierowcy)  {
 	throw "Not yet implemented";
 }
 
-void Model::AbsModel::modyfikacjaKierowcy(int pIdKierowcy) {
+void Model::AbsModel::modyfikacjaKierowcy(int pIdKierowcy)  {
 	throw "Not yet implemented";
 }
 
-string* Model::AbsModel::znalezienieKierowcow(int pIdKursow) {
+string* Model::AbsModel::znalezienieKierowcow(int pIdKursow)  {
 	throw "Not yet implemented";
 }
 
-void Model::AbsModel::wyslaniePowiadomien(vector<int> pIdKierowcow , string pPowiadomienie) {
+void Model::AbsModel::wyslaniePowiadomien(vector<int> pIdKierowcow , string pPowiadomienie)  {
 	throw "Not yet implemented";
 }
 
-void Model::AbsModel::zglaszenieIncydentu(string pIncydent) {
+void Model::AbsModel::zglaszenieIncydentu(string pIncydent)  {
 	throw "Not yet implemented";
 }
 
-vector<string> Model::AbsModel::znajdzGodzinyPrzyjazdow(int pIdPrzystanku) {
+vector<string> Model::AbsModel::znajdzGodzinyPrzyjazdow(int pIdPrzystanku)  {
 	throw "Not yet implemented";
 }
 
-void Model::AbsModel::zarejestrowanieZdarzenia(string pZdarzenie) {
+void Model::AbsModel::zarejestrowanieZdarzenia(string pZdarzenie)  {
 	throw "Not yet implemented";
 }
 
-string Model::AbsModel::znalezienieKursuRozpoczetego(int pIdKursu) {
+string Model::AbsModel::znalezienieKursuRozpoczetego(int pIdKursu)  {
 	throw "Not yet implemented";
 }

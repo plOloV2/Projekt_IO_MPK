@@ -24,13 +24,13 @@ namespace Model
 
 		public: Kurs(int pIdKursu, vector<int> pListaIdPrzystankow , vector<string> pListaGodzinPrzyjazdow );
 
-		public: int dajIdKursu();
+		public: int dajIdKursu() override;
 
-		public: int* dajListaIdPrzystankow();
+		public: vector<int> dajListaIdPrzystankow() override;
 
-		public: string* dajListaGodzinPrzyjazdow();
+		public: vector<string> dajListaGodzinPrzyjazdow() override;
 
-		public: string opisz();
+		public: string opisz() override;
 	};
 }
 

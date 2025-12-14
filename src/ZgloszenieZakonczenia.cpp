@@ -7,17 +7,18 @@ using namespace std;
 #include "AbsStrategiaAktualizacjiStanuKursu.hpp"
 
 Kontroler::ZgloszenieZakonczenia::ZgloszenieZakonczenia() {
-	throw "Not yet implemented";
+	cout << "Constructor\n";
 }
 
 bool Kontroler::ZgloszenieZakonczenia::zatwierdzenieZakonczeniaKursu() {
 	return true;
 }
 
-void Kontroler::ZgloszenieZakonczenia::zakonczenieAktualizacjiKursu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu) {
-	string opisKursu = pModel.znalezienieKursuRozpoczetego(pIdKursu);
+void Kontroler::ZgloszenieZakonczenia::zakonczenieAktualizacjiKursu(Model::AbsModel* pModel, int pIdKierowcy, int pIdKursu) {
+	cout << "zakonczenieAktualizacjiKursu()\n";
+	string opisKursu = pModel->znalezienieKursuRozpoczetego(pIdKursu);
 	if(opisKursu != "Brak"){
-		string opisKierowcy = pModel.znalezienieKierowcy(pIdKierowcy);
+		string opisKierowcy = pModel->znalezienieKierowcy(pIdKierowcy);
 		vector<string> atrybutyKierowcy;
 		stringstream streamKierowcy(opisKierowcy);
 		string helper;
@@ -27,15 +28,15 @@ void Kontroler::ZgloszenieZakonczenia::zakonczenieAktualizacjiKursu(Model::AbsMo
 		if(stoi(atrybutyKierowcy.at(1)) == pIdKursu) {
 			bool decyzja = zatwierdzenieZakonczeniaKursu();
 			if(decyzja){
-				pModel.modyfikacjaKierowcy(INT_MAX);
-				opisKursu = pModel.znalezienieKursu(pIdKursu);
+				pModel->modyfikacjaKierowcy(INT_MAX);
+				opisKursu = pModel->znalezienieKursu(pIdKursu);
 				vector<string> atrybutyKursu;
 				stringstream streamKursu(opisKursu);
 				while(getline(streamKursu, helper, ';')){
 					atrybutyKierowcy.push_back(helper);
 				}
 				opisKursu = atrybutyKursu.at(0) + ';' + atrybutyKursu.at(1) + ';' + atrybutyKursu.at(2) + ';';
-				pModel.modyfikowanieKursu(opisKursu);
+				pModel->modyfikowanieKursu(opisKursu);
 			}
 		}
 		else{

@@ -16,9 +16,9 @@ namespace Kontroler
 {
 	class ModyfikowanieRozkladuJazdy
 	{
-		private: Model::AbsModel _absModel;
+		private: Model::AbsModel* _absModel;
 
-		public: void modyfikowanieRozkladuJazdy(Model::AbsModel pModel, int pIdKursu);
+		public: void modyfikowanieRozkladuJazdy(Model::AbsModel* pModel, int pIdKursu);
 
 		private: int edycjaPrzystankowKoncowych();
 

@@ -16,11 +16,13 @@ namespace Kontroler
 {
 	class AbsStrategiaAktualizacjiStanuKursu
 	{
-		private: Model::AbsModel _absModel;
+		private: Model::AbsModel* _absModel;
 		private: int _idKursu;
 		private: int _idKierowcy;
 
-		public: void zakonczenieAktualizacjiKursu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu);
+    	public: virtual ~AbsStrategiaAktualizacjiStanuKursu() = default;
+
+		public: virtual void zakonczenieAktualizacjiKursu(Model::AbsModel* pModel, int pIdKierowcy, int pIdKursu) = 0;
 	};
 }
 

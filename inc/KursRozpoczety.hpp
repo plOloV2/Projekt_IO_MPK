@@ -21,9 +21,9 @@ namespace Model
 	{
 		private: int _idKierowcy;
 
-		public: KursRozpoczety(Model::AbsKurs pKurs, int pIdKierowcy);
+		public: KursRozpoczety(Model::AbsKurs* pKurs, int pIdKierowcy);
 
-		public: string opisz();
+		public: string opisz() override;
 	};
 }
 

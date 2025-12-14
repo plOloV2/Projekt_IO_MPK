@@ -1,23 +1,26 @@
 #include <exception>
 #include <string>
+#include <iostream>
 using namespace std;
 
 #include "KartaKursu.hpp"
 #include "AbsKurs.hpp"
 
-Model::KartaKursu::KartaKursu(Model::AbsKurs pKurs) {
+Model::KartaKursu::KartaKursu(Model::AbsKurs* pKurs) {
+	this->_kurs = pKurs;
 }
 
 int Model::KartaKursu::dajIdKursu() {
-	throw "Not yet implemented";
+	throw _kurs->dajIdKursu();
 }
 
-int* Model::KartaKursu::dajListaIdPrzystankow() {
-	throw "Not yet implemented";
+vector<int> Model::KartaKursu::dajListaIdPrzystankow() {
+	cout << "dajListaIdPrzystankow()\n";
+	throw _kurs->dajListaIdPrzystankow();
 }
 
-string* Model::KartaKursu::dajListaGodzinprzyjazdow() {
-	throw "Not yet implemented";
+vector<string> Model::KartaKursu::dajListaGodzinPrzyjazdow() {
+	return _kurs->dajListaGodzinPrzyjazdow();
 }
 
 string Model::KartaKursu::opisz() {

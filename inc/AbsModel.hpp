@@ -15,28 +15,29 @@ namespace Model
 {
 	class AbsModel
 	{
+		public: virtual ~AbsModel() = default;
 
-		public: void dodawanieKursu();
+		public: virtual void dodawanieKursu() = 0;
 
-		public: void modyfikowanieKursu(string pKurs);
+		public: virtual void modyfikowanieKursu(string pKurs) = 0;
 
-		public: string znalezienieKursu(int pIdKursu);
+		public: virtual string znalezienieKursu(int pIdKursu) = 0;
 
-		public: string znalezienieKierowcy(int pIdKierowcy);
+		public: virtual string znalezienieKierowcy(int pIdKierowcy) = 0;
 
-		public: void modyfikacjaKierowcy(int pIdKierowcy);
+		public: virtual void modyfikacjaKierowcy(int pIdKierowcy) = 0;
 
-		public: string* znalezienieKierowcow(int pIdKursow);
+		public: virtual string* znalezienieKierowcow(int pIdKursow) = 0;
 
-		public: void wyslaniePowiadomien(vector<int> pIdKierowcow , string pPowiadomienie);
+		public: virtual void wyslaniePowiadomien(vector<int> pIdKierowcow , string pPowiadomienie) = 0;
 
-		public: void zglaszenieIncydentu(string pIncydent);
+		public: virtual void zglaszenieIncydentu(string pIncydent) = 0;
 
-		public: vector<string> znajdzGodzinyPrzyjazdow(int pIdPrzystanku);
+		public: virtual vector<string> znajdzGodzinyPrzyjazdow(int pIdPrzystanku) = 0;
 
-		public: void zarejestrowanieZdarzenia(string pZdarzenie);
+		public: virtual void zarejestrowanieZdarzenia(string pZdarzenie) = 0;
 
-		public: string znalezienieKursuRozpoczetego(int pIdKursu);
+		public: virtual string znalezienieKursuRozpoczetego(int pIdKursu) = 0;
 	};
 }
 

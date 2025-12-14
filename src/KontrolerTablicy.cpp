@@ -6,7 +6,7 @@ using namespace std;
 #include "AbsKontrolerTablicy.hpp"
 #include "OdbiorInformacjiOGodzinachPrzyjazdow.hpp"
 
-Kontroler::KontrolerTablicy::KontrolerTablicy(Model::AbsModel pModel) {
+Kontroler::KontrolerTablicy::KontrolerTablicy(Model::AbsModel* pModel) {
 	this->_absModel = pModel;
 }
 

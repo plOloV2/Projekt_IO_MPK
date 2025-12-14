@@ -18,9 +18,9 @@ namespace Kontroler
 {
 	class KontrolerPlanera: public Kontroler::AbsKontrolerPlanera
 	{
-		private: Model::AbsModel _absModel;
+		private: Model::AbsModel* _absModel;
 
-		public: KontrolerPlanera(Model::AbsModel pModel);
+		public: KontrolerPlanera(Model::AbsModel* pModel);
 
 		public: void tworzenieRozkladuJazdy();
 

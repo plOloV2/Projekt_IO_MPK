@@ -18,9 +18,9 @@ namespace Kontroler
 {
 	class KontrolerDystrybutora: public Kontroler::AbsKontrolerDystrybutora
 	{
-		private: Model::AbsModel _absModel;
+		private: Model::AbsModel* _absModel;
 
-		public: KontrolerDystrybutora(Model::AbsModel pModel);
+		public: KontrolerDystrybutora(Model::AbsModel* pModel);
 
 		public: void modyfikowanieRozkladuJazdy();
 

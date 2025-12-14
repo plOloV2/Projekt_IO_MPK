@@ -22,7 +22,7 @@ namespace Kontroler
 
 		private: bool zatwierdzenieZakonczeniaKursu();
 
-		public: void zakonczenieAktualizacjiKursu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu);
+		public: void zakonczenieAktualizacjiKursu(Model::AbsModel* pModel, int pIdKierowcy, int pIdKursu) override;
 	};
 }
 

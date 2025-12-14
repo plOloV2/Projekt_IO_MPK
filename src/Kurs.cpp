@@ -1,6 +1,7 @@
 #include <exception>
 #include <string>
 #include <vector>
+#include <iostream>
 using namespace std;
 
 #include "Kurs.hpp"
@@ -16,15 +17,16 @@ int Model::Kurs::dajIdKursu() {
 	throw "Not yet implemented";
 }
 
-int* Model::Kurs::dajListaIdPrzystankow() {
+vector<int> Model::Kurs::dajListaIdPrzystankow() {
 	throw "Not yet implemented";
 }
 
-string* Model::Kurs::dajListaGodzinPrzyjazdow() {
+vector<string> Model::Kurs::dajListaGodzinPrzyjazdow() {
 	throw "Not yet implemented";
 }
 
 string Model::Kurs::opisz() {
+	cout << "opisz()\n";
 	string opisKursu = to_string(_idKursu) + ';';
 	for (int i = 0; i < _listaIdPrzystankow.size(); i++){
 		opisKursu = opisKursu + ',' + to_string(_listaIdPrzystankow.at(i));
@@ -34,5 +36,6 @@ string Model::Kurs::opisz() {
 		opisKursu = opisKursu + ',' + _listaGodzinPrzyjazdow.at(i);
 	}
 	opisKursu = opisKursu + ';';
+	return opisKursu;
 }
 

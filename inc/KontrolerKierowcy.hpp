@@ -18,9 +18,9 @@ namespace Kontroler
 {
 	class KontrolerKierowcy: public Kontroler::AbsKontrolerKierowcy
 	{
-		private: Model::AbsModel _absModel;
+		private: Model::AbsModel* _absModel;
 
-		public: KontrolerKierowcy(Model::AbsModel pModel);
+		public: KontrolerKierowcy(Model::AbsModel *pModel);
 
 		public: void aktualizacjaStanuKursu();
 

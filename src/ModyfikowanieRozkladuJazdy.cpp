@@ -4,7 +4,7 @@ using namespace std;
 #include "ModyfikowanieRozkladuJazdy.hpp"
 #include "AbsModel.hpp"
 
-void Kontroler::ModyfikowanieRozkladuJazdy::modyfikowanieRozkladuJazdy(Model::AbsModel pModel, int pIdKursu) {
+void Kontroler::ModyfikowanieRozkladuJazdy::modyfikowanieRozkladuJazdy(Model::AbsModel* pModel, int pIdKursu) {
 	throw "Not yet implemented";
 }
 

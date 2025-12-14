@@ -17,9 +17,9 @@ namespace Kontroler
 	class TworzenieRozkladuJazdy
 	{
 		private: int _idKursu;
-		private: Model::AbsModel _absModel;
+		private: Model::AbsModel* _absModel;
 
-		public: void tworzenieRozkladuJazdy(Model::AbsModel pModel);
+		public: void tworzenieRozkladuJazdy(Model::AbsModel* pModel);
 	};
 }
 

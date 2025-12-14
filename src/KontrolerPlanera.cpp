@@ -5,7 +5,7 @@ using namespace std;
 #include "AbsModel.hpp"
 #include "AbsKontrolerPlanera.hpp"
 
-Kontroler::KontrolerPlanera::KontrolerPlanera(Model::AbsModel pModel) {
+Kontroler::KontrolerPlanera::KontrolerPlanera(Model::AbsModel* pModel) {
 }
 
 void Kontroler::KontrolerPlanera::tworzenieRozkladuJazdy() {

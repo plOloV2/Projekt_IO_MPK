@@ -16,9 +16,9 @@ namespace Kontroler
 {
 	class OdbiorInformacjiOGodzinachPrzyjazdow
 	{
-		private: Model::AbsModel _absModel;
+		private: Model::AbsModel* _absModel;
 
-		public: OdbiorInformacjiOGodzinachPrzyjazdow(Model::AbsModel pModel);
+		public: OdbiorInformacjiOGodzinachPrzyjazdow(Model::AbsModel* pModel);
 
 		public: void odbiorInformacjiOGodzinachPrzyjazdow(int pIdKursu);
 

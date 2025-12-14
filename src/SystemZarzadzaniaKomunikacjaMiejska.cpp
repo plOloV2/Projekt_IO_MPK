@@ -18,7 +18,7 @@ void Kontroler::SystemZarzadzaniaKomunikacjaMiejska::main() {
     Model::Inwentarz inwentarz;
     Model::Model model(inwentarz, dao);
 
-    KontrolerKierowcy _kontrolerKierowcy(model);
+    KontrolerKierowcy _kontrolerKierowcy(&model);
     _kontrolerKierowcy.aktualizacjaStanuKursu();
 }
 

@@ -17,9 +17,9 @@ namespace Kontroler
 {
 	class WysylanieInformacjiOUtrudnieniach
 	{
-		private: Model::AbsModel _absModel;
+		private: Model::AbsModel* _absModel;
 
-		public: void wyslanieInformacjiOUtrudnieniach(Model::AbsModel pModel, int pTypIncydentu, string pOpisIncydentu);
+		public: void wyslanieInformacjiOUtrudnieniach(Model::AbsModel* pModel, int pTypIncydentu, string pOpisIncydentu);
 
 		private: int* wyborIdKursow();
 	};

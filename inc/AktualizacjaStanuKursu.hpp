@@ -16,13 +16,13 @@ namespace Kontroler
 {
 	class AktualizacjaStanuKursu
 	{
-		private: Kontroler::AbsStrategiaAktualizacjiStanuKursu _strategiaAktualizacjiStanuKursu;
+		private: Kontroler::AbsStrategiaAktualizacjiStanuKursu* _strategiaAktualizacjiStanuKursu;
 
-		private: Model::AbsModel _absModel;
+		private: Model::AbsModel* _absModel;
 
 		private: int _idKierowcy;
 
-		public: AktualizacjaStanuKursu(Model::AbsModel pModel, int pIdKierowcy);
+		public: AktualizacjaStanuKursu(Model::AbsModel* pModel, int pIdKierowcy);
 
 		private: int wprowadzenieIdKursu();
 

@@ -21,9 +21,9 @@ namespace Model
 {
 	class KursZglaszajacy: public Model::KartaKursu
 	{
-		private: Model::Incydent _incydent;
+		private: Model::Incydent* _incydent;
 
-		public: KursZglaszajacy(Model::AbsKurs pKurs, Model::Incydent pIncydent);
+		public: KursZglaszajacy(Model::AbsKurs* pKurs, Model::Incydent* pIncydent);
 
 		public: string opisz();
 	};

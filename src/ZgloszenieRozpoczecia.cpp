@@ -8,16 +8,18 @@ using namespace std;
 #include "Model.hpp"
 
 Kontroler::ZgloszenieRozpoczecia::ZgloszenieRozpoczecia() {
+	cout << "Constructor\n";
 }
 
 bool Kontroler::ZgloszenieRozpoczecia::zatwierdzenieRozpoczeciaKursu() {
 	return true;
 }
 
-void Kontroler::ZgloszenieRozpoczecia::zakonczenieAktualizacjiKursu(Model::AbsModel pModel, int pIdKierowcy, int pIdKursu) {
-	string opisKursu = pModel.znalezienieKursuRozpoczetego(pIdKursu);
+void Kontroler::ZgloszenieRozpoczecia::zakonczenieAktualizacjiKursu(Model::AbsModel* pModel, int pIdKierowcy, int pIdKursu) {
+	cout << "zakonczenieAktualizacjiKursu()\n";
+	string opisKursu = pModel->znalezienieKursuRozpoczetego(pIdKursu);
 	if(opisKursu == "Brak"){
-		string opisKierowcy = pModel.znalezienieKierowcy(pIdKierowcy);
+		string opisKierowcy = pModel->znalezienieKierowcy(pIdKierowcy);
 		vector<string> atrybutyKierowcy;
 		stringstream streamKierowcy(opisKierowcy);
 		string helper;
@@ -27,9 +29,9 @@ void Kontroler::ZgloszenieRozpoczecia::zakonczenieAktualizacjiKursu(Model::AbsMo
 		if(stoi(atrybutyKierowcy.at(1)) != pIdKursu) {
 			bool decyzja = zatwierdzenieRozpoczeciaKursu();
 			if(decyzja){
-				pModel.modyfikacjaKierowcy(pIdKursu);
-				opisKursu = pModel.znalezienieKursu(pIdKursu) + ';' + to_string(pIdKierowcy) + ';';
-				pModel.modyfikowanieKursu(opisKursu);
+				pModel->modyfikacjaKierowcy(pIdKursu);
+				opisKursu = pModel->znalezienieKursu(pIdKursu) + ';' + to_string(pIdKierowcy) + ';';
+				pModel->modyfikowanieKursu(opisKursu);
 			}
 		}
 		else{

@@ -7,7 +7,9 @@ using namespace std;
 #include "AbsKurs.hpp"
 #include "KartaKursu.hpp"
 
-Model::KursZglaszajacy::KursZglaszajacy(Model::AbsKurs pKurs, Model::Incydent pIncydent) : Model::KartaKursu(pKurs), _incydent(pIncydent) {
+Model::KursZglaszajacy::KursZglaszajacy(Model::AbsKurs* pKurs, Model::Incydent* pIncydent) : Model::KartaKursu(pKurs), _incydent(pIncydent) {
+	this->_kurs = pKurs;
+	this->_incydent = pIncydent;
 }
 
 string Model::KursZglaszajacy::opisz() {

@@ -17,17 +17,17 @@ namespace Model
 {
 	class KartaKursu: public Model::AbsKurs
 	{
-		protected: Model::AbsKurs _kurs;
+		protected: Model::AbsKurs* _kurs;
 
-		public: KartaKursu(Model::AbsKurs pKurs);
+		public: KartaKursu(Model::AbsKurs* pKurs);
 
-		public: int dajIdKursu();
+		public: int dajIdKursu() override;
 
-		public: int* dajListaIdPrzystankow();
+		public: vector<int> dajListaIdPrzystankow() override;
 
-		public: string* dajListaGodzinprzyjazdow();
+		public: vector<string> dajListaGodzinPrzyjazdow() override;
 
-		public: string opisz();
+		public: string opisz() override;
 	};
 }
 

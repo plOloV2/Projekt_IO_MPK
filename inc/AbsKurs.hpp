@@ -1,5 +1,6 @@
 #include <exception>
 #include <string>
+#include <vector>
 using namespace std;
 
 #ifndef __AbsKurs_hpp__
@@ -14,14 +15,15 @@ namespace Model
 {
 	class AbsKurs
 	{
+		public: virtual ~AbsKurs() = default;
 
-		public: int dajIdKursu();
+		public: virtual int dajIdKursu();
 
-		public: int* dajListaIdPrzystankow();
+		public: virtual vector<int> dajListaIdPrzystankow();
 
-		public: string* dajListaGodzinPrzyjazdow();
+		public: virtual vector<string> dajListaGodzinPrzyjazdow();
 
-		public: string opisz();
+		public: virtual string opisz();
 	};
 }
 
