@@ -118,7 +118,6 @@ vector<string> Model::DAO::znajdzPowiadomienia(int pIdKierowcy) {
 		}
 		vector<int> idKierowcow;
 		stringstream idStream(powiadomienie.at(0));
-		string helper;
 		while(getline(idStream, helper, ',')){
 			idKierowcow.push_back(stoi(helper));
 		}
