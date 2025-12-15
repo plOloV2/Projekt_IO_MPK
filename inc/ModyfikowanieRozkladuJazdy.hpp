@@ -21,21 +21,21 @@ namespace Kontroler
 
 		public: void modyfikowanieRozkladuJazdy(Model::AbsModel* pModel, int pIdKursu);
 
-		private: void wyswietlTrase(string kurs);
+		private: void wyswietlTrase(string Kurs);
 
-		private: vector<int> modyfikacjaListyPrzystankow(string kurs);
+		private: vector<int> modyfikacjaListyPrzystankow(string Kurs);
 
-		private: vector<string> modyfikacjaGodzinPrzyjazdow(string kurs);
+		private: vector<string> modyfikacjaGodzinPrzyjazdow(string Kurs);
 
-		private: string wprowadzZmiany(string id, vector<int> wszystkiePrzystanki, vector<string> godzinyPrzyjazdow, string driverId);
+		private: string wprowadzZmiany(string IdKursu, vector<int> wszystkiePrzystanki, vector<string> godzinyPrzyjazdow, string IdKierowcy);
 
-		private: bool sprawdzeniePoprawnosciKursu(string kurs);
+		private: bool sprawdzeniePoprawnosciKursu(string Kurs);
 
-		private: vector<string> podzielString(const string& s, char delimiter);
+		private: vector<string> podzielString(string dane, char dzielnik);
 
-		private: vector<int> parsePrzystanki(const string& stopsStr);
+		private: vector<int> parsePrzystanki(string dane);
 
-		private: vector<string> parseCzasy(const string& timesStr);
+		private: vector<string> parseCzasy(string dane);
 
 	};
 }
