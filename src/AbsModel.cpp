@@ -20,7 +20,7 @@ string Model::AbsModel::znalezienieKierowcy(int pIdKierowcy)  {
 	throw "Not yet implemented";
 }
 
-void Model::AbsModel::modyfikacjaKierowcy(int pIdKierowcy)  {
+void Model::AbsModel::modyfikacjaKierowcy(int pIdKierowcy, int pIdKursu)  {
 	throw "Not yet implemented";
 }
 

@@ -15,30 +15,33 @@ namespace Model
 {
 	class AbsDAO
 	{
+		public: virtual ~AbsDAO() = default;
 
-		public: void dodajWpisDoRejestru(string pZdarzenie);
+		public: virtual void dodajWpisDoRejestru(string pZdarzenie) = 0;
 
-		public: int dodajKurs(string pKurs);
+		public: virtual void dodajKurs(string pKurs) = 0;
 
-		public: void edytujKurs(string pKurs);
+		public: virtual void edytujKurs(string pKurs) = 0;
 
-		public: string znajdzKurs(int pIdKursu);
+		public: virtual string znajdzKurs(int pIdKursu) = 0;
 
-		public: void edytujKierowce(int pIdKierowcy, int pIdKursu);
+		public: virtual vector<string> znajdzKursy(int pIdPrzystanku) = 0;
 
-		public: string znajdzKierowce(int pIdKierowcy);
+		public: virtual void edytujKierowce(int pIdKierowcy, int pIdKursu) = 0;
 
-		public: vector<string> znajdzKierowcow(int pIdKursu);
+		public: virtual string znajdzKierowce(int pIdKierowcy) = 0;
 
-		public: void dodajPowiadomienie(vector<int> pIdKierowcow , string pPowiadomienie);
+		public: virtual vector<string> znajdzKierowcow(int pIdKursu) = 0;
 
-		public: vector<string> znajdzPowiadomienia(int pIdKierowcy);
+		public: virtual void dodajPowiadomienie(vector<int> pIdKierowcow , string pPowiadomienie) = 0;
 
-		public: void dodajIncydent(string pIncydent);
+		public: virtual vector<string> znajdzPowiadomienia(int pIdKierowcy) = 0;
 
-		public: vector<string> znajdzIncydenty();
+		public: virtual void dodajIncydent(string pIncydent) = 0;
 
-		public: void dodajWpisDoRejestruZdarzen(string pZdarzenie);
+		public: virtual vector<string> znajdzIncydenty() = 0;
+
+		public: virtual void dodajWpisDoRejestruZdarzen(string pZdarzenie) = 0;
 	};
 }
 

@@ -28,7 +28,7 @@ void Kontroler::ZgloszenieRozpoczecia::zakonczenieAktualizacjiKursu(Model::AbsMo
 		if(stoi(atrybutyKierowcy.at(1)) != -1) {
 			bool decyzja = zatwierdzenieRozpoczeciaKursu();
 			if(decyzja){
-				pModel->modyfikacjaKierowcy(pIdKursu);
+				pModel->modyfikacjaKierowcy(pIdKierowcy, pIdKursu);
 				opisKursu = pModel->znalezienieKursu(pIdKursu) + ';' + to_string(pIdKierowcy) + ';';
 				pModel->modyfikowanieKursu(opisKursu);
 			}

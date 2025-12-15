@@ -23,7 +23,7 @@ Kontroler::AktualizacjaStanuKursu::AktualizacjaStanuKursu(Model::AbsModel* pMode
 }
 
 int Kontroler::AktualizacjaStanuKursu::wprowadzenieIdKursu() {
-	return rand() % 10;
+	return 1;//rand() % 10;
 }
 
 void Kontroler::AktualizacjaStanuKursu::wyborOpcji() {

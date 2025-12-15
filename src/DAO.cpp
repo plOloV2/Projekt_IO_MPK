@@ -3,6 +3,7 @@
 #include <vector>
 #include <map>
 #include <sstream>
+#include <iostream>
 using namespace std;
 
 #include "DAO.hpp"
@@ -39,7 +40,7 @@ void Model::DAO::dodajWpisDoRejestru(string pZdarzenie) {
 	throw "Not yet implemented";
 }
 
-int Model::DAO::dodajKurs(string pKurs) {
+void Model::DAO::dodajKurs(string pKurs) {
 	_ostatniNrKursu++;
 	_bazaKursow[_ostatniNrKursu] = pKurs;
 }
@@ -60,6 +61,30 @@ string Model::DAO::znajdzKurs(int pIdKursu) {
 	else{
 		return "Brak";
 	}
+}
+
+vector<string> Model::DAO::znajdzKursy(int pIdPrzystanku){
+	vector<string> kursy;
+	for(int i = 0; i <= _ostatniNrKursu; i++){
+		vector<string> kurs;
+		stringstream kursStream(_bazaKursow[i]);
+		string helper;
+		while(getline(kursStream, helper, ';')){
+			kurs.push_back(helper);
+		}
+		vector<int> idPrzystankow;
+		stringstream idStream(kurs.at(0));
+		while(getline(idStream, helper, ',')){
+			idPrzystankow.push_back(stoi(helper));
+		}
+		for(int j = 0; j < idPrzystankow.size(); j++){
+			if(idPrzystankow.at(j) == pIdPrzystanku) {
+				kursy.push_back(_bazaKursow[i]);
+				break;
+			}
+		}
+	}
+	return kursy;
 }
 
 void Model::DAO::edytujKierowce(int pIdKierowcy, int pIdKursu) {

@@ -17,7 +17,7 @@ namespace Model
 
 namespace Model
 {
-	class DAO: public Model::AbsDAO
+	class DAO: public AbsDAO
 	{
 		private: map<int, string> _bazaKierowcow;
 
@@ -39,11 +39,13 @@ namespace Model
 
 		public: void dodajWpisDoRejestru(string pZdarzenie);
 
-		public: int dodajKurs(string pKurs);
+		public: void dodajKurs(string pKurs);
 
 		public: void edytujKurs(string pKurs);
 
 		public: string znajdzKurs(int pIdKursu);
+
+		public: vector<string> znajdzKursy(int pIdPrzystanku);
 
 		public: void edytujKierowce(int pIdKierowcy, int pIdKursu);
 

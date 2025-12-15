@@ -25,7 +25,7 @@ namespace Model
 
 		public: virtual string znalezienieKierowcy(int pIdKierowcy) = 0;
 
-		public: virtual void modyfikacjaKierowcy(int pIdKierowcy) = 0;
+		public: virtual void modyfikacjaKierowcy(int pIdKierowcy, int pIdKursu) = 0;
 
 		public: virtual string* znalezienieKierowcow(int pIdKursow) = 0;
 

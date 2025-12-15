@@ -13,7 +13,7 @@ Kontroler::KontrolerKierowcy::KontrolerKierowcy(Model::AbsModel *pModel) {
 }
 
 void Kontroler::KontrolerKierowcy::aktualizacjaStanuKursu() {
-	int idKierowcy = 0;
+	int idKierowcy = 1;
 	AktualizacjaStanuKursu aktualizacjaStanuKursu = AktualizacjaStanuKursu(_absModel, idKierowcy);
 }
 

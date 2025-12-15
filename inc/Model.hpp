@@ -22,10 +22,10 @@ namespace Model
 {
 	class Model: public AbsModel
 	{
-		private: AbsDAO _dao;
-		private: Inwentarz _inwentarz;
+		private: AbsDAO* _dao;
+		private: Inwentarz* _inwentarz;
 
-		public: Model(Inwentarz pInwentarz, AbsDAO pDao);
+		public: Model(Inwentarz* pInwentarz, AbsDAO* pDao);
 
 		public: void dodawanieKursu()  override;
 
@@ -35,7 +35,7 @@ namespace Model
 
 		public: string znalezienieKierowcy(int pIdKierowcy)  override;
 
-		public: void modyfikacjaKierowcy(int pIdKierowcy)  override;
+		public: void modyfikacjaKierowcy(int pIdKierowcy, int pIdKursu)  override;
 
 		public: string* znalezienieKierowcow(int pIdKursow)  override;
 

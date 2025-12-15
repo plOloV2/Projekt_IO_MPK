@@ -30,7 +30,7 @@ namespace Model
 {
 	class Inwentarz
 	{
-		private: AbsDAO _dao;
+		private: AbsDAO* _dao;
 		private: vector<Kierowca> _kierowcy;
 		private: vector<Powiadomienie> _powiadomienia;
 		private: vector<AbsKurs*> _kursy;
@@ -38,7 +38,7 @@ namespace Model
 
 		public: Inwentarz();
 
-		public: Inwentarz(AbsDAO pDao);
+		public: Inwentarz(AbsDAO* pDao);
 
 		public: void modyfikujKurs(string pKurs);
 
@@ -46,9 +46,9 @@ namespace Model
 
 		public: Kierowca dajKierowce(int pIdKierowcy);
 
-		public: void modyfikujKierowce(int pIdKierowcy);
+		public: void modyfikujKierowce(int pIdKierowcy, int pIdKursu);
 
-		public: Kierowca* dajKierowcow(int pIdKursu);
+		public: vector<Kierowca> dajKierowcow(int pIdKursu);
 
 		public: void dodajPowiadomienie(vector<int> pIdKierowcow , string pPowiadmienie);
 

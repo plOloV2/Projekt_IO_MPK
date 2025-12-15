@@ -27,7 +27,7 @@ void Kontroler::ZgloszenieZakonczenia::zakonczenieAktualizacjiKursu(Model::AbsMo
 		if(stoi(atrybutyKierowcy.at(1)) == pIdKursu) {
 			bool decyzja = zatwierdzenieZakonczeniaKursu();
 			if(decyzja){
-				pModel->modyfikacjaKierowcy(-1);
+				pModel->modyfikacjaKierowcy(pIdKierowcy, -1);
 				opisKursu = pModel->znalezienieKursu(pIdKursu);
 				vector<string> atrybutyKursu;
 				stringstream streamKursu(opisKursu);

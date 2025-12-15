@@ -11,12 +11,13 @@ using namespace std;
 #include "KontrolerKierowcy.hpp"
 #include "KontrolerTablicy.hpp"
 #include "Model.hpp"
+#include "DAO.hpp"
 
 void Kontroler::SystemZarzadzaniaKomunikacjaMiejska::main() {
     cout << "System Zarzadzania Komunikacja Miejska dziala!" << endl;
 
-    Model::AbsDAO dao;
-    Model::Inwentarz inwentarz;
+    Model::DAO* dao = new Model::DAO();
+    Model::Inwentarz* inwentarz = new Model::Inwentarz(dao);
     Model::Model model(inwentarz, dao);
 
     KontrolerKierowcy _kontrolerKierowcy(&model);

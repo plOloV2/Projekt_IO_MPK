@@ -9,7 +9,9 @@ using namespace std;
 #include "Inwentarz.hpp"
 #include "AbsModel.hpp"
 
-Model::Model::Model(Inwentarz pInwentarz, AbsDAO pDao) {
+Model::Model::Model(Inwentarz* pInwentarz, AbsDAO* pDao) {
+	this->_inwentarz = pInwentarz;
+	this->_dao = pDao;
 }
 
 void Model::Model::dodawanieKursu()  {
@@ -17,23 +19,23 @@ void Model::Model::dodawanieKursu()  {
 }
 
 void Model::Model::modyfikowanieKursu(string pKurs)  {
-	_inwentarz.modyfikujKurs(pKurs);
+	_inwentarz->modyfikujKurs(pKurs);
 }
 
 string Model::Model::znalezienieKursu(int pIdKursu)  {
-	Kurs kurs = _inwentarz.dajKurs(pIdKursu);
+	Kurs kurs = _inwentarz->dajKurs(pIdKursu);
 	string opisKursu = kurs.opisz();
 	return opisKursu;
 }
 
 string Model::Model::znalezienieKierowcy(int pIdKierowcy)  {
-	Kierowca kierowca = _inwentarz.dajKierowce(pIdKierowcy);
+	Kierowca kierowca = _inwentarz->dajKierowce(pIdKierowcy);
 	string opisKierowcy = kierowca.opisz();
 	return opisKierowcy;
 }
 
-void Model::Model::modyfikacjaKierowcy(int pIdKierowcy)  {
-	_inwentarz.modyfikujKierowce(pIdKierowcy);
+void Model::Model::modyfikacjaKierowcy(int pIdKierowcy, int pIdKursu)  {
+	_inwentarz->modyfikujKierowce(pIdKierowcy, pIdKursu);
 }
 
 string* Model::Model::znalezienieKierowcow(int pIdKursow)  {
@@ -45,11 +47,11 @@ void Model::Model::wyslaniePowiadomien(vector<int> pIdKierowcow , string pPowiad
 }
 
 void Model::Model::zglaszenieIncydentu(string pIncydent)  {
-	_inwentarz.dodajIncydent(pIncydent);
+	_inwentarz->dodajIncydent(pIncydent);
 }
 
 vector<string> Model::Model::znajdzGodzinyPrzyjazdow(int pIdPrzystanku)  {
-	vector<Kurs> kursy = _inwentarz.dajGodzinyPrzyjazdow(pIdPrzystanku);
+	vector<Kurs> kursy = _inwentarz->dajGodzinyPrzyjazdow(pIdPrzystanku);
 	vector<string> opisyKursow;
 	for(int i = 0; i < kursy.size(); i++){
 		opisyKursow.push_back(kursy.at(i).opisz());
@@ -62,7 +64,7 @@ void Model::Model::zarejestrowanieZdarzenia(string pZdarzenie)  {
 }
 
 string Model::Model::znalezienieKursuRozpoczetego(int pIdKursu)  {
-	KursRozpoczety kurs = _inwentarz.dajKursRozpoczety(pIdKursu);
+	KursRozpoczety kurs = _inwentarz->dajKursRozpoczety(pIdKursu);
 	string opisKursu = kurs.opisz();
 	return opisKursu;
 }

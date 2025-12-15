@@ -8,7 +8,7 @@ void Model::AbsDAO::dodajWpisDoRejestru(string pZdarzenie) {
 	throw "Not yet implemented";
 }
 
-int Model::AbsDAO::dodajKurs(string pKurs) {
+void Model::AbsDAO::dodajKurs(string pKurs) {
 	throw "Not yet implemented";
 }
 
@@ -17,6 +17,10 @@ void Model::AbsDAO::edytujKurs(string pKurs) {
 }
 
 string Model::AbsDAO::znajdzKurs(int pIdKursu) {
+	throw "Not yet implemented";
+}
+
+vector<string> Model::AbsDAO::znajdzKursy(int pIdPrzystanku) {
 	throw "Not yet implemented";
 }
 
