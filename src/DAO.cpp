@@ -173,3 +173,51 @@ void Model::DAO::dodajWpisDoRejestruZdarzen(string pZdarzenie) {
 	throw "Not yet implemented";
 }
 
+void Model::DAO::wyswietlBaze(){
+	cout << "\nKierowcy:\n";
+	for(int i = 1; i <= _ostatniNrKierowcy; i++){
+		vector<string> kierowca;
+		stringstream kierowcaStream(_bazaKierowcow[i]);
+		string helper;
+		while(getline(kierowcaStream, helper, ';')){
+			kierowca.push_back(helper);
+		}
+		cout << "ID kierowcy: " << kierowca.at(0) << ", ID kursu: " << kierowca.at(1) << endl;
+	}
+	cout << "\nKursy:\n";
+	for(int i = 1; i <= _ostatniNrKursu; i++){
+		vector<string> kurs;
+		stringstream kursStream(_bazaKursow[i]);
+		string helper;
+		while(getline(kursStream, helper, ';')){
+			kurs.push_back(helper);
+		}
+		if(kurs.size() == 4){
+			cout << "ID kursu: " << kurs.at(0) << ", ID przystankow: " << kurs.at(1) << ", Godziny przyjazdow: " << kurs.at(2) <<", ID kierowcy: " << kurs.at(3) << endl;
+		}
+		else{
+			cout << "ID kursu: " << kurs.at(0) << ", ID przystankow: " << kurs.at(1) << ", Godziny przyjazdow: " << kurs.at(2) << endl;
+		}
+	}
+	cout << "\nIncydenty:\n";
+	for(int i = 1; i <= _ostatniNrIncydentu; i++){
+		vector<string> incydent;
+		stringstream incydentStream(_bazaIncydentow[i]);
+		string helper;
+		while(getline(incydentStream, helper, ';')){
+			incydent.push_back(helper);
+		}
+		cout << "Typ incydentu: " << incydent.at(0) << ", Opis incydentu: " << incydent.at(1) << endl;
+	}
+	cout << "\nPowiadomienia:\n";
+	for(int i = 1; i <= _ostatniNrPowiadomienia; i++){
+		vector<string> powiadomienie;
+		stringstream powiadomienieStream(_bazaPowiadomien[i]);
+		string helper;
+		while(getline(powiadomienieStream, helper, ';')){
+			powiadomienie.push_back(helper);
+		}
+		cout << "ID kierowcow: " << powiadomienie.at(0) << ", Opis powiadomienia: " << powiadomienie.at(1) << endl;
+	}
+}
+

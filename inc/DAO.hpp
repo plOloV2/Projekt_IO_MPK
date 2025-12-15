@@ -62,6 +62,8 @@ namespace Model
 		public: vector<string> znajdzIncydenty();
 
 		public: void dodajWpisDoRejestruZdarzen(string pZdarzenie);
+
+		public: void wyswietlBaze();
 	};
 }
 
