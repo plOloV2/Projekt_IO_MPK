@@ -28,11 +28,21 @@ vector<string> Model::Kurs::dajListaGodzinPrzyjazdow() {
 string Model::Kurs::opisz() {
 	string opisKursu = to_string(_idKursu) + ';';
 	for (int i = 0; i < _listaIdPrzystankow.size(); i++){
-		opisKursu = opisKursu + ',' + to_string(_listaIdPrzystankow.at(i));
+		if(i != 0){
+			opisKursu = opisKursu + ',' + to_string(dajListaIdPrzystankow().at(i));
+		}
+		else {
+			opisKursu = opisKursu + to_string(dajListaIdPrzystankow().at(i));
+		}
 	}
 	opisKursu = opisKursu + ';';
 	for (int i = 0; i < _listaGodzinPrzyjazdow.size(); i++){
-		opisKursu = opisKursu + ',' + _listaGodzinPrzyjazdow.at(i);
+		if(i != 0){
+			opisKursu = opisKursu + ',' + dajListaGodzinPrzyjazdow().at(i);
+		}
+		else{
+			opisKursu = opisKursu + dajListaGodzinPrzyjazdow().at(i);
+		}
 	}
 	return opisKursu;
 }
