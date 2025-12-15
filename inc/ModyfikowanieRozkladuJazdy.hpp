@@ -1,4 +1,5 @@
 #include <exception>
+#include <vector>
 using namespace std;
 
 #ifndef __ModyfikowanieRozkladuJazdy_hpp__
@@ -20,15 +21,15 @@ namespace Kontroler
 
 		public: void modyfikowanieRozkladuJazdy(Model::AbsModel* pModel, int pIdKursu);
 
-		private: int* edycjaPrzystankowKoncowych();
+		private: vector<int> edycjaPrzystankowKoncowych();
 
-		private: void modyfikacjaTrasy();
+		private: void wyswietlTrase(string kurs);
 
-		private: int* modyfikacjaListyPrzystankow();
+		private: vector<int> modyfikacjaListyPrzystankow();
 
-		private: int* modyfikacjaGodzinPrzyjazdow();
+		private: vector<int> modyfikacjaGodzinPrzyjazdow();
 
-		private: bool sprawdzeniePoprawnosciKursu();
+		private: bool sprawdzeniePoprawnosciKursu(string kurs);
 	};
 }
 

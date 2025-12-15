@@ -31,7 +31,7 @@ Model::Kurs Model::Inwentarz::dajKurs(int pIdKursu) {
 }
 
 Model::Kierowca Model::Inwentarz::dajKierowce(int pIdKierowcy) {
-	int idKursu = INT_MAX;
+	int idKursu = -1;
 	return Kierowca(pIdKierowcy, idKursu);
 }
 
