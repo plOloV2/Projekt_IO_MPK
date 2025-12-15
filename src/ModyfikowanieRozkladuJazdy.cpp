@@ -96,11 +96,8 @@ vector<int> Kontroler::ModyfikowanieRozkladuJazdy::modyfikacjaListyPrzystankow(s
         przystanki = parsePrzystanki(sections[1]);
     }
 
-    // Logic previously in edycjaPrzystankowKoncowych
     przystanki.push_back(3);
     przystanki.push_back(5);
-
-    // Logic previously in this function
     przystanki.push_back(6);
     przystanki.push_back(21);
 
@@ -117,13 +114,11 @@ vector<string> Kontroler::ModyfikowanieRozkladuJazdy::modyfikacjaGodzinPrzyjazdo
         czasy = parseCzasy(sections[2]);
     }
 
-    if(czasy.size() < 4) {
-        czasy.push_back("10:00");
-        czasy.push_back("10:15");
-        czasy.push_back("10:30");
-        czasy.push_back("10:45");
-    }
-
+    czasy.push_back("10:00");
+    czasy.push_back("10:15");
+    czasy.push_back("10:30");
+    czasy.push_back("10:45");
+    
     return czasy;
 }
 
