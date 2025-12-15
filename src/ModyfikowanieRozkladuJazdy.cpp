@@ -10,7 +10,7 @@
 using namespace std;
 
 // Split string by delimiter
-vector<string> split(const string& s, char delimiter) {
+vector<string> Kontroler::ModyfikowanieRozkladuJazdy::podzielString(const string& s, char delimiter) {
     vector<string> tokens;
     string token;
     istringstream tokenStream(s);
@@ -23,11 +23,11 @@ vector<string> split(const string& s, char delimiter) {
 }
 
 // Parse "1,2,3" into vector<int>
-vector<int> parsePrzystanki(const string& stopsStr) {
+vector<int> Kontroler::ModyfikowanieRozkladuJazdy::parsePrzystanki(const string& stopsStr) {
     vector<int> result;
     if (stopsStr.empty()) return result;
     
-    vector<string> items = split(stopsStr, ',');
+    vector<string> items = podzielString(stopsStr, ',');
     for(const auto& item : items){
 
         try {
@@ -43,9 +43,9 @@ vector<int> parsePrzystanki(const string& stopsStr) {
 }
 
 // Parse "08:00,08:15" into vector<string>
-vector<string> parseCzasy(const string& timesStr) {
+vector<string> Kontroler::ModyfikowanieRozkladuJazdy::parseCzasy(const string& timesStr) {
     if (timesStr.empty()) return {};
-    return split(timesStr, ',');
+    return podzielString(timesStr, ',');
 }
 
 void Kontroler::ModyfikowanieRozkladuJazdy::modyfikowanieRozkladuJazdy(Model::AbsModel* pModel, int pIdKursu) {
@@ -58,7 +58,7 @@ void Kontroler::ModyfikowanieRozkladuJazdy::modyfikowanieRozkladuJazdy(Model::Ab
     }
 
     // Extract ID and DriverID immediately to preserve them throughout edits
-    vector<string> initialParts = split(kurs, ';');
+    vector<string> initialParts = podzielString(kurs, ';');
     if (initialParts.size() < 3) throw "Invalid data format";
 
     string currentId = initialParts[0];
@@ -79,6 +79,7 @@ void Kontroler::ModyfikowanieRozkladuJazdy::modyfikowanieRozkladuJazdy(Model::Ab
     } while(!sprawdzeniePoprawnosciKursu(kurs));
 
     pModel->modyfikowanieKursu(kurs);
+
 }
 
 void Kontroler::ModyfikowanieRozkladuJazdy::wyswietlTrase(string kurs) {
@@ -91,7 +92,7 @@ vector<int> Kontroler::ModyfikowanieRozkladuJazdy::modyfikacjaListyPrzystankow(s
     vector<int> przystanki;
     
     // Parse existing stops from the string
-    vector<string> sections = split(kurs, ';');
+    vector<string> sections = podzielString(kurs, ';');
     if(sections.size() >= 2) {
         przystanki = parsePrzystanki(sections[1]);
     }
@@ -106,7 +107,7 @@ vector<int> Kontroler::ModyfikowanieRozkladuJazdy::modyfikacjaListyPrzystankow(s
 
 vector<string> Kontroler::ModyfikowanieRozkladuJazdy::modyfikacjaGodzinPrzyjazdow(string kurs) {
 
-    vector<string> sections = split(kurs, ';');
+    vector<string> sections = podzielString(kurs, ';');
     vector<string> czasy;
 
     // Parse existing times
@@ -158,7 +159,7 @@ string Kontroler::ModyfikowanieRozkladuJazdy::wprowadzZmiany(string id, vector<i
 bool Kontroler::ModyfikowanieRozkladuJazdy::sprawdzeniePoprawnosciKursu(string kurs) {
     if(kurs == "") return false;
 
-    vector<string> sections = split(kurs, ';');
+    vector<string> sections = podzielString(kurs, ';');
     
     // Must have at least ID, Stops, Times
     if(sections.size() < 3) return false;

@@ -30,6 +30,13 @@ namespace Kontroler
 		private: string wprowadzZmiany(string id, vector<int> wszystkiePrzystanki, vector<string> godzinyPrzyjazdow, string driverId);
 
 		private: bool sprawdzeniePoprawnosciKursu(string kurs);
+
+		private: vector<string> podzielString(const string& s, char delimiter);
+
+		private: vector<int> parsePrzystanki(const string& stopsStr);
+
+		private: vector<string> parseCzasy(const string& timesStr);
+
 	};
 }
 
