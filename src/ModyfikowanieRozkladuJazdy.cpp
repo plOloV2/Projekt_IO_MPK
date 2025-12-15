@@ -1,10 +1,43 @@
 #include <exception>
 #include <vector>
+#include <sstream>
 #include <iostream>
 using namespace std;
 
 #include "ModyfikowanieRozkladuJazdy.hpp"
 #include "AbsModel.hpp"
+
+vector<int> parseKurs(const string kurs, bool selectFirst) {
+
+    vector<int> result;
+    stringstream ss(kurs);
+    string line;
+
+    while(getline(ss, line)){
+
+        stringstream lineStream(line);
+        int first, second;
+        char dash; 
+
+        if(lineStream >> first >> dash >> second){
+
+            if(selectFirst){
+
+                result.push_back(first);
+
+            }else {
+
+                result.push_back(second);
+
+            }
+
+        }
+
+    }
+
+    return result;
+
+}
 
 void Kontroler::ModyfikowanieRozkladuJazdy::modyfikowanieRozkladuJazdy(Model::AbsModel* pModel, int pIdKursu) {
 
@@ -21,7 +54,7 @@ void Kontroler::ModyfikowanieRozkladuJazdy::modyfikowanieRozkladuJazdy(Model::Ab
 
 		vector<int> przystankiKoncowe = edycjaPrzystankowKoncowych(kurs);
 		
-		vector<int> wszystkiePrzystanki = modyfikacjaListyPrzystankow(kurs, przystankiKoncowe);
+		vector<int> wszystkiePrzystanki = modyfikacjaListyPrzystankow(przystankiKoncowe);
 
 		vector<int> godzinyPrzyjazdow = modyfikacjaGodzinPrzyjazdow(kurs);
 
@@ -36,7 +69,7 @@ void Kontroler::ModyfikowanieRozkladuJazdy::modyfikowanieRozkladuJazdy(Model::Ab
 
 vector<int> Kontroler::ModyfikowanieRozkladuJazdy::edycjaPrzystankowKoncowych(string kurs) {
 
-	vector<int> przystankiKon;
+	vector<int> przystankiKon = parseKurs(kurs, true);
 
 	przystankiKon.push_back(3);
 	przystankiKon.push_back(5);
@@ -49,7 +82,7 @@ void Kontroler::ModyfikowanieRozkladuJazdy::wyswietlTrase(string kurs) {
 	std::cout<<kurs<<std::endl;
 }
 
-vector<int> Kontroler::ModyfikowanieRozkladuJazdy::modyfikacjaListyPrzystankow(string kurs, vector<int> przystankiKoncowe) {
+vector<int> Kontroler::ModyfikowanieRozkladuJazdy::modyfikacjaListyPrzystankow(vector<int> przystankiKoncowe) {
 
 	przystankiKoncowe.push_back(6);
 	przystankiKoncowe.push_back(21);
@@ -59,7 +92,7 @@ vector<int> Kontroler::ModyfikowanieRozkladuJazdy::modyfikacjaListyPrzystankow(s
 
 vector<int> Kontroler::ModyfikowanieRozkladuJazdy::modyfikacjaGodzinPrzyjazdow(string kurs) {
 
-	vector<int> godzinyPrzyjazdow;
+	vector<int> godzinyPrzyjazdow = parseKurs(kurs, false);
 
 	godzinyPrzyjazdow.push_back(4);
 	godzinyPrzyjazdow.push_back(5);

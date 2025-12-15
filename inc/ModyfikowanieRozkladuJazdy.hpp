@@ -25,7 +25,7 @@ namespace Kontroler
 
 		private: void wyswietlTrase(string kurs);
 
-		private: vector<int> modyfikacjaListyPrzystankow(string kurs, vector<int> przystankiKoncowe);
+		private: vector<int> modyfikacjaListyPrzystankow(vector<int> przystankiKoncowe);
 
 		private: vector<int> modyfikacjaGodzinPrzyjazdow(string kurs);
 
