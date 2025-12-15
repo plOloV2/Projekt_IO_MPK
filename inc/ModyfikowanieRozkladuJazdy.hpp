@@ -20,13 +20,15 @@ namespace Kontroler
 
 		public: void modyfikowanieRozkladuJazdy(Model::AbsModel* pModel, int pIdKursu);
 
-		private: int edycjaPrzystankowKoncowych();
+		private: int* edycjaPrzystankowKoncowych();
 
 		private: void modyfikacjaTrasy();
 
 		private: int* modyfikacjaListyPrzystankow();
 
-		private: int modyfikacjaGodzinPrzyjazdow();
+		private: int* modyfikacjaGodzinPrzyjazdow();
+
+		private: bool sprawdzeniePoprawnosciKursu();
 	};
 }
 
