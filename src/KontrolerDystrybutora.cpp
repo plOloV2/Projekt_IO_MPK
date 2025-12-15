@@ -6,6 +6,7 @@ using namespace std;
 #include "AbsKontrolerDystrybutora.hpp"
 
 Kontroler::KontrolerDystrybutora::KontrolerDystrybutora(Model::AbsModel* pModel) {
+	this->_absModel = pModel;
 }
 
 void Kontroler::KontrolerDystrybutora::modyfikowanieRozkladuJazdy() {

@@ -8,6 +8,7 @@ using namespace std;
 #include "AbsKontrolerDystrybutora.hpp"
 #include "AbsKontrolerTablicy.hpp"
 #include "AbsKontrolerKierowcy.hpp"
+#include "KontrolerDystrybutora.hpp"
 #include "KontrolerKierowcy.hpp"
 #include "KontrolerTablicy.hpp"
 #include "Model.hpp"
@@ -22,11 +23,12 @@ void Kontroler::SystemZarzadzaniaKomunikacjaMiejska::main() {
 
     KontrolerKierowcy _kontrolerKierowcy(&model);
     KontrolerTablicy _kontrolerTablicy(&model);
-    for(int i = 0; i < 3; i++) {
+    for(int i = 0; i < 3; i++)
         _kontrolerKierowcy.aktualizacjaStanuKursu();
-    }
+    
     _kontrolerKierowcy.odbiorInformacjiOGodzinachPrzyjazdow();
     _kontrolerTablicy.odbiorInformacjiOGodzinachPrzyjazdow();
+    _kontrolerDystrybutora.modyfikowanieRozkladuJazdy();
 
 }
 
