@@ -19,7 +19,11 @@ string Model::KursRozpoczety::opisz() {
 	for (int i = 0; i < _kurs->dajListaGodzinPrzyjazdow().size(); i++){
 		opisKursu = opisKursu + ',' + _kurs->dajListaGodzinPrzyjazdow().at(i);
 	}
-	opisKursu = opisKursu + ';' + to_string(_idKierowcy) + ';';
+	opisKursu = opisKursu + ';' + to_string(_idKierowcy);
 	return opisKursu;
+}
+
+int Model::KursRozpoczety::dajIdKierowcy(){
+	return _idKierowcy;
 }
 

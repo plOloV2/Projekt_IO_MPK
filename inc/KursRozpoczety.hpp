@@ -24,6 +24,8 @@ namespace Model
 		public: KursRozpoczety(Model::AbsKurs* pKurs, int pIdKierowcy);
 
 		public: string opisz() override;
+
+		public: int dajIdKierowcy();
 	};
 }
 

@@ -17,7 +17,7 @@ int Model::Kierowca::dajIdKursu() {
 }
 
 string Model::Kierowca::opisz() {
-	string opis = to_string(_idKierowcy) + ";" + to_string(_idKursu) + ";";
+	string opis = to_string(_idKierowcy) + ";" + to_string(_idKursu);
 	return opis;
 }
 

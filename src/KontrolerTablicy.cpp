@@ -11,7 +11,7 @@ Kontroler::KontrolerTablicy::KontrolerTablicy(Model::AbsModel* pModel) {
 }
 
 void Kontroler::KontrolerTablicy::odbiorInformacjiOGodzinachPrzyjazdow() {
-	int idPrzystanku = 0;
+	int idPrzystanku = 1;
 	OdbiorInformacjiOGodzinachPrzyjazdow oiogp = OdbiorInformacjiOGodzinachPrzyjazdow(_absModel);
 	oiogp.odbiorInformacjiOGodzinachPrzyjazdow2(idPrzystanku);
 }

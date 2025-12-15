@@ -32,7 +32,7 @@ void Kontroler::ZgloszenieIncydentu::zakonczenieAktualizacjiKursu(Model::AbsMode
 		if(stoi(atrybutyKierowcy.at(1)) == pIdKursu) {
 			int typIncydentu = wyborTypuIncydentu();
 			string opisIncydentu = wprowadzenieOpisuIncydentu();
-			pModel->zglaszenieIncydentu(to_string(typIncydentu) + ';' + opisIncydentu + ';');
+			pModel->zglaszenieIncydentu(to_string(typIncydentu) + ';' + opisIncydentu);
 		}
 		else{
 			cout << "Kierowca nie posiada rozpoczetego kursu\n";

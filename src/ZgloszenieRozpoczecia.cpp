@@ -17,7 +17,7 @@ bool Kontroler::ZgloszenieRozpoczecia::zatwierdzenieRozpoczeciaKursu() {
 void Kontroler::ZgloszenieRozpoczecia::zakonczenieAktualizacjiKursu(Model::AbsModel* pModel, int pIdKierowcy, int pIdKursu) {
 	cout << "Rozpoczynanie kursu\n";
 	string opisKursu = pModel->znalezienieKursuRozpoczetego(pIdKursu);
-	if(opisKursu == "Brak"){
+	if(opisKursu == ""){
 		string opisKierowcy = pModel->znalezienieKierowcy(pIdKierowcy);
 		vector<string> atrybutyKierowcy;
 		stringstream streamKierowcy(opisKierowcy);
@@ -25,11 +25,11 @@ void Kontroler::ZgloszenieRozpoczecia::zakonczenieAktualizacjiKursu(Model::AbsMo
 		while(getline(streamKierowcy, helper, ';')){
 			atrybutyKierowcy.push_back(helper);
 		}
-		if(stoi(atrybutyKierowcy.at(1)) != -1) {
+		if(stoi(atrybutyKierowcy.at(1)) == -1) {
 			bool decyzja = zatwierdzenieRozpoczeciaKursu();
 			if(decyzja){
 				pModel->modyfikacjaKierowcy(pIdKierowcy, pIdKursu);
-				opisKursu = pModel->znalezienieKursu(pIdKursu) + ';' + to_string(pIdKierowcy) + ';';
+				opisKursu = pModel->znalezienieKursu(pIdKursu) + ';' + to_string(pIdKierowcy);
 				pModel->modyfikowanieKursu(opisKursu);
 			}
 		}

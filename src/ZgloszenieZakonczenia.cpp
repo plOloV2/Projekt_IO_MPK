@@ -34,7 +34,7 @@ void Kontroler::ZgloszenieZakonczenia::zakonczenieAktualizacjiKursu(Model::AbsMo
 				while(getline(streamKursu, helper, ';')){
 					atrybutyKierowcy.push_back(helper);
 				}
-				opisKursu = atrybutyKursu.at(0) + ';' + atrybutyKursu.at(1) + ';' + atrybutyKursu.at(2) + ';';
+				opisKursu = atrybutyKursu.at(0) + ';' + atrybutyKursu.at(1) + ';' + atrybutyKursu.at(2);
 				pModel->modyfikowanieKursu(opisKursu);
 			}
 		}

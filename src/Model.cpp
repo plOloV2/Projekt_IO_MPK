@@ -65,6 +65,11 @@ void Model::Model::zarejestrowanieZdarzenia(string pZdarzenie)  {
 
 string Model::Model::znalezienieKursuRozpoczetego(int pIdKursu)  {
 	KursRozpoczety kurs = _inwentarz->dajKursRozpoczety(pIdKursu);
-	string opisKursu = kurs.opisz();
-	return opisKursu;
+	if(kurs.dajIdKierowcy() != -1){
+		string opisKursu = kurs.opisz();
+		return opisKursu;
+	}
+	else{
+		return "";
+	}
 }

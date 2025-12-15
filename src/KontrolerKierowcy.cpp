@@ -18,7 +18,7 @@ void Kontroler::KontrolerKierowcy::aktualizacjaStanuKursu() {
 }
 
 void Kontroler::KontrolerKierowcy::odbiorInformacjiOGodzinachPrzyjazdow() {
-	int idKursu = 0;
+	int idKursu = 1;
 	OdbiorInformacjiOGodzinachPrzyjazdow oiogp = OdbiorInformacjiOGodzinachPrzyjazdow(_absModel);
 	oiogp.odbiorInformacjiOGodzinachPrzyjazdow(idKursu);
 }

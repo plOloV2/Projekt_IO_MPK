@@ -36,12 +36,12 @@ Model::Kurs Model::Inwentarz::dajKurs(int pIdKursu) {
 	}
 	vector<int> listaId;
 	stringstream idStream(atrybutyKursu.at(1));
-	while(getline(idStream, helper, ';')) {
+	while(getline(idStream, helper, ',')) {
 		listaId.push_back(stoi(helper));
 	}
 	vector<string> listaGodzin;
 	stringstream godzinyStream(atrybutyKursu.at(1));
-	while(getline(godzinyStream, helper, ';')) {
+	while(getline(godzinyStream, helper, ',')) {
 		listaGodzin.push_back(helper);
 	}
 	Kurs kurs(stoi(atrybutyKursu.at(0)), listaId, listaGodzin);

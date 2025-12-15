@@ -34,7 +34,6 @@ string Model::Kurs::opisz() {
 	for (int i = 0; i < _listaGodzinPrzyjazdow.size(); i++){
 		opisKursu = opisKursu + ',' + _listaGodzinPrzyjazdow.at(i);
 	}
-	opisKursu = opisKursu + ';';
 	return opisKursu;
 }
 

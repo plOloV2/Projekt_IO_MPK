@@ -10,29 +10,29 @@ using namespace std;
 #include "AbsDAO.hpp"
 
 Model::DAO::DAO() {
-	_bazaKierowcow[1] = "1;-1;";
-	_bazaKierowcow[2] = "2;1;";
-	_bazaKierowcow[3] = "3;-1;";
-	_bazaKierowcow[4] = "4;3;";
-	_bazaKierowcow[5] = "5;5;";
+	_bazaKierowcow[1] = "1;-1";
+	_bazaKierowcow[2] = "2;1";
+	_bazaKierowcow[3] = "3;-1";
+	_bazaKierowcow[4] = "4;3";
+	_bazaKierowcow[5] = "5;5";
 	_ostatniNrKierowcy = 5;
-	_bazaKursow[1] = "1;1,2;10:00,11:00;1;";
-	_bazaKursow[2] = "2;2,3,4;10:30,10:45,11:00;";
-	_bazaKursow[3] = "3;4,1;12:00,13:00;4;";
-	_bazaKursow[4] = "4;1,5;12:00,12:30;";
-	_bazaKursow[5] = "5;2,3,5;10:00,11:00,12:00;5;";
+	_bazaKursow[1] = "1;1,2;10:00,11:00;2";
+	_bazaKursow[2] = "2;2,3,4;10:30,10:45,11:00";
+	_bazaKursow[3] = "3;4,1;12:00,13:00;4";
+	_bazaKursow[4] = "4;1,5;12:00,12:30";
+	_bazaKursow[5] = "5;2,3,5;10:00,11:00,12:00;5";
 	_ostatniNrKursu = 5;
-	_bazaIncydentow[1] = "0;Silnik nie dziala;";
-	_bazaIncydentow[2] = "1;Wykoleilem sie;";
-	_bazaIncydentow[3] = "2;Potracilem kogos;";
-	_bazaIncydentow[4] = "1;Zderzylem sie z tramwajem;";
-	_bazaIncydentow[5] = "3;Droga jest zablokowana;";
+	_bazaIncydentow[1] = "0;Silnik nie dziala";
+	_bazaIncydentow[2] = "1;Wykoleilem sie";
+	_bazaIncydentow[3] = "2;Potracilem kogos";
+	_bazaIncydentow[4] = "1;Zderzylem sie z tramwajem";
+	_bazaIncydentow[5] = "3;Droga jest zablokowana";
 	_ostatniNrIncydentu = 5;
-	_bazaPowiadomien[1] = "1,3;0;Omijaj przystanek 1;";
-	_bazaPowiadomien[2] = "1,2,5;1;Omijaj przystanek 2;";
-	_bazaPowiadomien[3] = "2,5;2;Omijaj przystanek 3;";
-	_bazaPowiadomien[4] = "2,3;1;Omijaj przystanek 4;";
-	_bazaPowiadomien[5] = "4,5;3;Omijaj przystanek 5;";
+	_bazaPowiadomien[1] = "1,3;0;Omijaj przystanek 1";
+	_bazaPowiadomien[2] = "1,2,5;1;Omijaj przystanek 2";
+	_bazaPowiadomien[3] = "2,5;2;Omijaj przystanek 3";
+	_bazaPowiadomien[4] = "2,3;1;Omijaj przystanek 4";
+	_bazaPowiadomien[5] = "4,5;3;Omijaj przystanek 5";
 	_ostatniNrPowiadomienia = 5;
 }
 
@@ -65,7 +65,7 @@ string Model::DAO::znajdzKurs(int pIdKursu) {
 
 vector<string> Model::DAO::znajdzKursy(int pIdPrzystanku){
 	vector<string> kursy;
-	for(int i = 0; i <= _ostatniNrKursu; i++){
+	for(int i = 1; i <= _ostatniNrKursu; i++){
 		vector<string> kurs;
 		stringstream kursStream(_bazaKursow[i]);
 		string helper;
@@ -89,7 +89,7 @@ vector<string> Model::DAO::znajdzKursy(int pIdPrzystanku){
 
 void Model::DAO::edytujKierowce(int pIdKierowcy, int pIdKursu) {
 	if(pIdKierowcy <= _ostatniNrKierowcy){
-		string kierowca = to_string(pIdKierowcy) + ';' + to_string(pIdKursu) + ';';
+		string kierowca = to_string(pIdKierowcy) + ';' + to_string(pIdKursu);
 		_bazaKierowcow[pIdKierowcy] = kierowca;
 	}
 }
@@ -105,7 +105,7 @@ string Model::DAO::znajdzKierowce(int pIdKierowcy) {
 
 vector<string> Model::DAO::znajdzKierowcow(int pIdKursu) {
 	vector<string> kierowcy;
-	for(int i = 0; i <= _ostatniNrKierowcy; i++){
+	for(int i = 1; i <= _ostatniNrKierowcy; i++){
 		vector<int> kierowca;
 		stringstream kursStream(_bazaKierowcow[i]);
 		string helper;
@@ -128,7 +128,7 @@ void Model::DAO::dodajPowiadomienie(vector<int> pIdKierowcow , string pPowiadomi
 			powiadomienie = powiadomienie + ',';
 		}
 	}
-	powiadomienie = powiadomienie + ';' + pPowiadomienie + ';';
+	powiadomienie = powiadomienie + ';' + pPowiadomienie;
 	_bazaPowiadomien[_ostatniNrPowiadomienia] = powiadomienie;
 }
 

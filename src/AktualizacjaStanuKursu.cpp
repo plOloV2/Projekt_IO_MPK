@@ -15,7 +15,7 @@ Kontroler::AktualizacjaStanuKursu::AktualizacjaStanuKursu(Model::AbsModel* pMode
 	this->_idKierowcy = pIdKierowcy;
 	int idKursu = wprowadzenieIdKursu();
 	string kurs = _absModel->znalezienieKursu(idKursu);
-	if(kurs != "Brak"){
+	if(kurs != ""){
 		wyborOpcji();
 		_strategiaAktualizacjiStanuKursu->zakonczenieAktualizacjiKursu(_absModel, _idKierowcy, idKursu);
 	}
@@ -23,15 +23,23 @@ Kontroler::AktualizacjaStanuKursu::AktualizacjaStanuKursu(Model::AbsModel* pMode
 }
 
 int Kontroler::AktualizacjaStanuKursu::wprowadzenieIdKursu() {
-	return 1;//rand() % 10;
+	int idKursu;
+	cout << "\nPodaj ID Kursu: ";
+	cin >> idKursu;
+	return idKursu;
 }
 
 void Kontroler::AktualizacjaStanuKursu::wyborOpcji() {
-	int opcja = rand() % 3;
-	if(opcja == 0){
+	int opcja;
+	cout << "\nWybierz opcję:\n";
+	cout << "1. Rozpocznij kurs\n";
+	cout << "2. Zakoncz kurs\n";
+	cout << "3. Zglos incydent\n";
+	cin >> opcja;
+	if(opcja == 1){
 		_strategiaAktualizacjiStanuKursu = new ZgloszenieRozpoczecia();
 	}
-	else if(opcja == 1){
+	else if(opcja == 2){
 		_strategiaAktualizacjiStanuKursu = new ZgloszenieZakonczenia();
 	}
 	else{
