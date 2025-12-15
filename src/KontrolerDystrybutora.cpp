@@ -10,7 +10,7 @@ Kontroler::KontrolerDystrybutora::KontrolerDystrybutora(Model::AbsModel* pModel)
 }
 
 void Kontroler::KontrolerDystrybutora::modyfikowanieRozkladuJazdy() {
-	throw "Not yet implemented";
+	// modyfikowanieRozkladuJazdy
 }
 
 void Kontroler::KontrolerDystrybutora::wysylanieInformacjiOUtrudnieniach() {

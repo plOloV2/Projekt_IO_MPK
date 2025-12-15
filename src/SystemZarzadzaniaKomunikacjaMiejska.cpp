@@ -23,12 +23,15 @@ void Kontroler::SystemZarzadzaniaKomunikacjaMiejska::main() {
 
     KontrolerKierowcy _kontrolerKierowcy(&model);
     KontrolerTablicy _kontrolerTablicy(&model);
+    KontrolerDystrybutora _kontrolerDystrybutora(&model);
+
+    _kontrolerDystrybutora.modyfikowanieRozkladuJazdy();
+
     for(int i = 0; i < 3; i++)
         _kontrolerKierowcy.aktualizacjaStanuKursu();
     
     _kontrolerKierowcy.odbiorInformacjiOGodzinachPrzyjazdow();
     _kontrolerTablicy.odbiorInformacjiOGodzinachPrzyjazdow();
-    _kontrolerDystrybutora.modyfikowanieRozkladuJazdy();
 
 }
 
