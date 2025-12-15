@@ -90,7 +90,27 @@ void Model::Inwentarz::dodajIncydent(string pIncydent) {
 
 vector<Model::Kurs> Model::Inwentarz::dajGodzinyPrzyjazdow(int pIdPrzystanku) {
 	vector<Model::Kurs> godzinyPrzyjazdow;
-	_dao->znajdzKursy(pIdPrzystanku);
+	vector<string> opisyKursow = _dao->znajdzKursy(pIdPrzystanku);
+	for(int i = 0; i < opisyKursow.size(); i++){
+		vector<string> atrybutyKursu;
+		stringstream kursStream(opisyKursow.at(i));
+		string helper;
+		while(getline(kursStream, helper, ';')) {
+			atrybutyKursu.push_back(helper);
+		}
+		vector<int> listaId;
+		stringstream idStream(atrybutyKursu.at(1));
+		while(getline(idStream, helper, ',')) {
+			listaId.push_back(stoi(helper));
+		}
+		vector<string> listaGodzin;
+		stringstream godzinyStream(atrybutyKursu.at(2));
+		while(getline(godzinyStream, helper, ',')) {
+			listaGodzin.push_back(helper);
+		}
+		Kurs kurs(stoi(atrybutyKursu.at(0)), listaId, listaGodzin);
+		godzinyPrzyjazdow.push_back(kurs);
+	}
 	return godzinyPrzyjazdow;
 }
 

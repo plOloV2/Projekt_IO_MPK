@@ -73,7 +73,7 @@ vector<string> Model::DAO::znajdzKursy(int pIdPrzystanku){
 			kurs.push_back(helper);
 		}
 		vector<int> idPrzystankow;
-		stringstream idStream(kurs.at(0));
+		stringstream idStream(kurs.at(1));
 		while(getline(idStream, helper, ',')){
 			idPrzystankow.push_back(stoi(helper));
 		}

@@ -23,12 +23,12 @@ void Kontroler::OdbiorInformacjiOGodzinachPrzyjazdow::odbiorInformacjiOGodzinach
 	vector<string> listaIdPrzystankow;
 	stringstream streamId(atrybutyKursu.at(1));
 	while(getline(streamId, helper, ',')){
-		atrybutyKursu.push_back(helper);
+		listaIdPrzystankow.push_back(helper);
 	}
 	vector<string> listaGodzinPrzyjazdow;
 	stringstream streamGodzin(atrybutyKursu.at(2));
 	while(getline(streamGodzin, helper, ',')){
-		atrybutyKursu.push_back(helper);
+		listaGodzinPrzyjazdow.push_back(helper);
 	}
 	for(int i = 0; i < listaIdPrzystankow.size(); i++){
 		cout << "Przystanek " << listaIdPrzystankow.at(i) << ": " << listaGodzinPrzyjazdow.at(i) << endl;
@@ -49,12 +49,12 @@ void Kontroler::OdbiorInformacjiOGodzinachPrzyjazdow::odbiorInformacjiOGodzinach
 		vector<string> listaIdPrzystankow;
 		stringstream streamId(atrybutyKursu.at(1));
 		while(getline(streamId, helper, ',')){
-			atrybutyKursu.push_back(helper);
+			listaIdPrzystankow.push_back(helper);
 		}
 		vector<string> listaGodzinPrzyjazdow;
 		stringstream streamGodzin(atrybutyKursu.at(2));
 		while(getline(streamGodzin, helper, ',')){
-			atrybutyKursu.push_back(helper);
+			listaGodzinPrzyjazdow.push_back(helper);
 		}
 		auto iterator = find(listaIdPrzystankow.begin(), listaIdPrzystankow.end(), to_string(pIdPrzystanku));
 		cout << "Kurs " << atrybutyKursu.at(0) << ": " << listaGodzinPrzyjazdow.at(distance(listaIdPrzystankow.begin(), iterator)) << endl;
