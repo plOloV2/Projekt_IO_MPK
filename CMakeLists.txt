@@ -4,6 +4,16 @@ project(SystemZarzadzaniaKomunikacjaMiejska CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+project(try_googletest VERSION 0.0.1
+                    DESCRIPTION "Try googletest"
+                    LANGUAGES CXX)
+
+include(cmake/UpdateSubmodule.cmake)
+
+include(CTest)
+
+add_subdirectory(googletest)
+
 file(GLOB_RECURSE PROJECT_SOURCES "${CMAKE_SOURCE_DIR}/src/*.cpp")
 
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
