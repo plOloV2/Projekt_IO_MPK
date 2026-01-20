@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.28)
-project(SystemZarzadzaniaKomunikacjaMiejska CXX)
+project(SystemZarzadzaniaKomunikacjaMiejska VERSION 0.0.1
+                    DESCRIPTION "Try googletest"
+                    LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -10,15 +12,21 @@ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -g -DDEBUG_MSG")
 set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3 -march=native -flto -fomit-frame-pointer")
 
 
-project(try_googletest VERSION 0.0.1
-                    DESCRIPTION "Try googletest"
-                    LANGUAGES CXX)
-
 include(cmake/UpdateSubmodule.cmake)
 
 include(CTest)
 
 add_subdirectory(googletest)
+
+if (BUILD_TESTING)
+    add_executable(exeTest test/test.cpp)
+    target_link_libraries(exeTest PRIVATE GTest::gtest_main)
+    add_test(NAME exeTest COMMAND exeTest)
+
+    include(GoogleTest)
+    # Finds all the Google tests associated with the executable
+    gtest_discover_tests(exeTest)
+endif()
 
 file(GLOB_RECURSE PROJECT_SOURCES "${CMAKE_SOURCE_DIR}/src/*.cpp")
 
