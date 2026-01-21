@@ -11,24 +11,20 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -pipe")
 set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -g -DDEBUG_MSG")
 set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3 -march=native -flto -fomit-frame-pointer")
 
-
 include(cmake/UpdateSubmodule.cmake)
 
 include(CTest)
 
 add_subdirectory(googletest)
-
-if (BUILD_TESTING)
-    add_executable(exeTest test/test.cpp)
-    target_link_libraries(exeTest PRIVATE GTest::gtest_main)
-    add_test(NAME exeTest COMMAND exeTest)
-
-    include(GoogleTest)
-    # Finds all the Google tests associated with the executable
-    gtest_discover_tests(exeTest)
-endif()
+add_subdirectory(tests)
 
 file(GLOB_RECURSE PROJECT_SOURCES "${CMAKE_SOURCE_DIR}/src/*.cpp")
+
+add_library(SZKM STATIC ${PROJECT_SOURCES})
+
+target_include_directories(SZKM PUBLIC
+    ${CMAKE_SOURCE_DIR}/inc
+)
 
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 
@@ -39,3 +35,5 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE inc)
+target_link_libraries(${PROJECT_NAME} PRIVATE SZKM)
+
