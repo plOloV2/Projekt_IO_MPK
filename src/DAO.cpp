@@ -49,13 +49,13 @@ void Model::DAO::edytujKurs(string pKurs) {
 	stringstream kursStream(pKurs);
 	string idKursu;
 	getline(kursStream, idKursu, ';');
-	if(stoi(idKursu) <= _ostatniNrKursu){
+	if(stoi(idKursu) <= _ostatniNrKursu && stoi(idKursu) > 0){
 		_bazaKursow[stoi(idKursu)] = pKurs;
 	}
 }
 
 string Model::DAO::znajdzKurs(int pIdKursu) {
-	if(pIdKursu <= _ostatniNrKursu){
+	if(pIdKursu <= _ostatniNrKursu && pIdKursu > 0){
 		return _bazaKursow[pIdKursu];
 	}
 	else{
@@ -95,7 +95,7 @@ void Model::DAO::edytujKierowce(int pIdKierowcy, int pIdKursu) {
 }
 
 string Model::DAO::znajdzKierowce(int pIdKierowcy) {
-	if(pIdKierowcy <= _ostatniNrKierowcy){
+	if(pIdKierowcy <= _ostatniNrKierowcy && pIdKierowcy > 0){
 		return _bazaKierowcow[pIdKierowcy];
 	}
 	else{
