@@ -9,7 +9,6 @@
 
 using namespace std;
 
-// Split string by delimiter
 vector<string> Kontroler::ModyfikowanieRozkladuJazdy::podzielString(string dane, char dzielnik) {
     vector<string> tokens;
     string token;
@@ -22,7 +21,6 @@ vector<string> Kontroler::ModyfikowanieRozkladuJazdy::podzielString(string dane,
 
 }
 
-// Parse "1,2,3" into vector<int>
 vector<int> Kontroler::ModyfikowanieRozkladuJazdy::parsePrzystanki(string dane) {
     vector<int> result;
     if (dane.empty()) return result;
@@ -42,7 +40,6 @@ vector<int> Kontroler::ModyfikowanieRozkladuJazdy::parsePrzystanki(string dane) 
 
 }
 
-// Parse "08:00,08:15" into vector<string>
 vector<string> Kontroler::ModyfikowanieRozkladuJazdy::parseCzasy(string dane) {
     if (dane.empty()) return {};
     return podzielString(dane, ',');
@@ -57,7 +54,6 @@ void Kontroler::ModyfikowanieRozkladuJazdy::modyfikowanieRozkladuJazdy(Model::Ab
         return;
     }
 
-    // Extract ID and DriverID immediately to preserve them throughout edits
     vector<string> fragmenty = podzielString(Kurs, ';');
     if (fragmenty.size() < 3) throw "Invalid data format";
 
@@ -67,13 +63,10 @@ void Kontroler::ModyfikowanieRozkladuJazdy::modyfikowanieRozkladuJazdy(Model::Ab
         
         wyswietlTrase(Kurs);
 
-        // 1. Modify Stops (Merged logic)
         vector<int> wszystkiePrzystanki = modyfikacjaListyPrzystankow(Kurs);
 
-        // 2. Modify Times
         vector<string> godzinyPrzyjazdow = modyfikacjaGodzinPrzyjazdow(Kurs);
 
-        // 3. Rebuild the string
         Kurs = wprowadzZmiany(fragmenty[0], wszystkiePrzystanki, godzinyPrzyjazdow, currentDriverId);
 
     } while(!sprawdzeniePoprawnosciKursu(Kurs));
@@ -86,12 +79,10 @@ void Kontroler::ModyfikowanieRozkladuJazdy::wyswietlTrase(string Kurs) {
     std::cout << "Obecny Kurs: " << Kurs << std::endl;
 }
 
-// Merged Function: Parses current stops and adds new ones
 vector<int> Kontroler::ModyfikowanieRozkladuJazdy::modyfikacjaListyPrzystankow(string Kurs) {
 
     vector<int> przystanki;
     
-    // Parse existing stops from the string
     vector<string> sekcje = podzielString(Kurs, ';');
     if(sekcje.size() >= 2) {
         przystanki = parsePrzystanki(sekcje[1]);
@@ -110,7 +101,6 @@ vector<string> Kontroler::ModyfikowanieRozkladuJazdy::modyfikacjaGodzinPrzyjazdo
     vector<string> sekcje = podzielString(Kurs, ';');
     vector<string> czasy;
 
-    // Parse existing times
     if(sekcje.size() >= 3) {
         czasy = parseCzasy(sekcje[2]);
     }
@@ -125,30 +115,25 @@ vector<string> Kontroler::ModyfikowanieRozkladuJazdy::modyfikacjaGodzinPrzyjazdo
 
 string Kontroler::ModyfikowanieRozkladuJazdy::wprowadzZmiany(string IdKursu, vector<int> wszystkiePrzystanki, vector<string> godzinyPrzyjazdow, string IdKierowcy) {
 
-    // Simple validation
     if(wszystkiePrzystanki.size() != godzinyPrzyjazdow.size()) {
         throw "Nie zgodna liczba przystankow i godzin przyjazdow";
     }
 
     stringstream ss;
 
-    // 1. ID
     ss << IdKursu << ";";
 
-    // 2. Stops
     for(size_t i = 0; i < wszystkiePrzystanki.size(); i++) {
         ss << wszystkiePrzystanki[i];
         if(i < wszystkiePrzystanki.size() - 1) ss << ",";
     }
     ss << ";";
 
-    // 3. Times
     for(size_t i = 0; i < godzinyPrzyjazdow.size(); i++) {
         ss << godzinyPrzyjazdow[i];
         if(i < godzinyPrzyjazdow.size() - 1) ss << ",";
     }
 
-    // 4. Driver ID (if exists)
     if(!IdKierowcy.empty()) {
         ss << ";" << IdKierowcy;
     }
@@ -161,10 +146,8 @@ bool Kontroler::ModyfikowanieRozkladuJazdy::sprawdzeniePoprawnosciKursu(string K
 
     vector<string> sekcje = podzielString(Kurs, ';');
     
-    // Must have at least ID, Stops, Times
     if(sekcje.size() < 3) return false;
 
-    // Further validation: check if stops count matches times count
     vector<int> przystanki = parsePrzystanki(sekcje[1]);
     vector<string> czasy = parseCzasy(sekcje[2]);
 

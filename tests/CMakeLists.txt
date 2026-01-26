@@ -8,7 +8,7 @@ if (BUILD_TESTING)
     include(GoogleTest)
     gtest_discover_tests(TestDAO)
 
-    add_executable(zad2Test kontroler/test_z2.cpp)
+    add_executable(zad2Test kontroler/TestModyfikowanieRozkladuJazdy.cpp)
     
     target_link_libraries(zad2Test PRIVATE 
             gtest_main

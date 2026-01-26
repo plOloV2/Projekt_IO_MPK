@@ -8,7 +8,7 @@ namespace Model {
 
     class MockAbsModel : public AbsModel {
         public:
-            // Metody wymagane przez logikę ModyfikowanieRozkladuJazdy
+            // Metody wymagane przez ModyfikowanieRozkladuJazdy
             MOCK_METHOD(string, znalezienieKursu, (int pIdKursu), (override));
             MOCK_METHOD(void, modyfikowanieKursu, (string pKurs), (override));
 
