@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.28)
-project(SystemZarzadzaniaKomunikacjaMiejska VERSION 0.0.1
-                    DESCRIPTION "Try googletest"
-                    LANGUAGES CXX)
+project(SystemZarzadzaniaKomunikacjaMiejska VERSION 0.0.1 LANGUAGES CXX C)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -12,6 +10,38 @@ set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3 -march=native -flto -fom
 
 include(cmake/UpdateSubmodule.cmake)
 include(CTest)
+
+# --- Dependency Management (cslim) ---
+include(FetchContent)
+
+FetchContent_Declare(
+    cslim
+    GIT_REPOSITORY https://github.com/dougbradbury/cslim.git
+    GIT_TAG        master
+)
+
+# Configuration: Disable cslim's own tests/examples to avoid needing CppUTest
+set(CSLIM_DISABLE_UNIT_TESTS ON CACHE BOOL "" FORCE)
+set(CSLIM_DISABLE_EXAMPLES ON CACHE BOOL "" FORCE)
+set(BUILD_SHARED_LIBS OFF)
+
+FetchContent_MakeAvailable(cslim)
+
+target_include_directories(CSlim PRIVATE 
+    "${cslim_SOURCE_DIR}/include/CSlim"
+    "${cslim_SOURCE_DIR}/include/Com"
+    "${cslim_SOURCE_DIR}/include/ExecutorC"
+)
+
+if(TARGET CSlim_main)
+    target_include_directories(CSlim_main PRIVATE 
+        "${cslim_SOURCE_DIR}/include/CSlim"
+        "${cslim_SOURCE_DIR}/include/Com"
+        "${cslim_SOURCE_DIR}/include/ExecutorC"
+    )
+endif()
+
+# -------------------------------------
 
 set(INSTALL_GTEST OFF CACHE BOOL "" FORCE)
 set(INSTALL_GMOCK OFF CACHE BOOL "" FORCE)
@@ -26,6 +56,22 @@ add_library(SZKM STATIC ${PROJECT_SOURCES})
 
 target_include_directories(SZKM PUBLIC
     ${CMAKE_SOURCE_DIR}/inc
+)
+
+add_executable(SlimRunner
+    "${CMAKE_SOURCE_DIR}/tests/SlimRunner.cpp"
+    # Add your fixture .cpp files here as you create them:
+    # "${CMAKE_SOURCE_DIR}/tests/fixtures/MyFixture.cpp"
+)
+
+target_link_libraries(SlimRunner PRIVATE
+    SZKM
+    CSlim
+)
+
+target_include_directories(SlimRunner PRIVATE 
+    "${CMAKE_SOURCE_DIR}/inc"
+    "${cslim_SOURCE_DIR}/include" 
 )
 
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
