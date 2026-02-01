@@ -3,3 +3,6 @@ bin
 *.exe
 build
 /FitNesse/FitNesseRoot
+SlimRunner
+try_googletest
+SystemZarzadzaniaKomunikacjaMiejska

@@ -74,6 +74,10 @@ target_include_directories(SlimRunner PRIVATE
     "${cslim_SOURCE_DIR}/include" 
 )
 
+set_target_properties(SlimRunner PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}
+)
+
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 
 target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_SOURCE_DIR}/inc")
