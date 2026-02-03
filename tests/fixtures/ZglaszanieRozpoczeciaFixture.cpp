@@ -61,6 +61,8 @@ public:
     }
 
     void dodawanieKursu() override {}
+    std::string znalezienieKierowcy(int) override { return ""; }
+    void modyfikacjaKierowcy(int, int) override {}
     std::string* znalezienieKierowcow(int) override { return nullptr; }
     void wyslaniePowiadomien(std::vector<int>, std::string) override {}
     void zglaszenieIncydentu(std::string) override {}
@@ -75,6 +77,7 @@ static Kontroler::ZgloszenieRozpoczecia* kontroler = nullptr;
 static int inputIdKursu = 0;
 static int inputIdKierowcy = 0;
 static char inputDaneKursu[512];
+static char inputDaneKierowcy[512];
 
 extern "C" {
 
@@ -86,6 +89,7 @@ extern "C" {
         inputIdKursu = 0;
         inputIdKierowcy = 0;
         memset(inputDaneKursu, 0, sizeof(inputDaneKursu));
+        memset(inputDaneKierowcy, 0, sizeof(inputDaneKierowcy));
         
         return fakeModel;
     }
@@ -107,6 +111,23 @@ extern "C" {
         strcpy(inputDaneKursu, arg);
         // Aktualizujemy fake model
         fakeModel->ustawKursTestowy(inputIdKursu, std::string(inputDaneKursu));
+        return "";
+    }
+
+    // Setter: id kursu
+    const char* ZglosRozpoczecie_setIdKierowcy(void* self, SlimList* args) {
+        // Pobieramy pierwszy argument jako string i konwertujemy na int
+        const char* arg = SlimList_GetStringAt(args, 0);
+        inputIdKierowcy = atoi(arg);
+        return ""; // Zwracamy pusty string (void w fitnesse)
+    }
+
+    // Setter: obecny kurs
+    const char* ZglosRozpoczecie_setObecnyKierowca(void* self, SlimList* args) {
+        const char* arg = SlimList_GetStringAt(args, 0);
+        strcpy(inputDaneKursu, arg);
+        // Aktualizujemy fake model
+        fakeModel->ustawKierowceTestowego(inputIdKierowcy, std::string(inputDaneKierowcy));
         return "";
     }
 
@@ -144,6 +165,8 @@ extern "C" {
     // Rejestracja
     SLIM_CREATE_FIXTURE(ZglosRozpoczecie)
         StatementExecutor_RegisterMethod(executor, fixtureName, "setIdKursu", ZglosRozpoczecie_setIdKursu);
+        StatementExecutor_RegisterMethod(executor, fixtureName, "setObecnyKierowca", ZglosRozpoczecie_setObecnyKierowca);
+        StatementExecutor_RegisterMethod(executor, fixtureName, "setIdKierowcy", ZglosRozpoczecie_setIdKierowcy);
         StatementExecutor_RegisterMethod(executor, fixtureName, "setObecnyKurs", ZglosRozpoczecie_setObecnyKurs);
         StatementExecutor_RegisterMethod(executor, fixtureName, "wykonajModyfikacje", ZglosRozpoczecie_wykonajModyfikacje);
         StatementExecutor_RegisterMethod(executor, fixtureName, "kursPoZmianie", ZglosRozpoczecie_kursPoZmianie);
