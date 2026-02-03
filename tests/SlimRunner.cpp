@@ -11,6 +11,7 @@ Slim * slim;
 extern "C" {
     SLIM_FIXTURES
         SLIM_FIXTURE(ModyfikujRozklad)
+        SLIM_FIXTURE(ZglosRozpoczecie)
     SLIM_END
 }
 
@@ -28,13 +29,13 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    printf("Starting SlimRunner on port: %s\n", argv[argc-1]);
+    printf("Starting SlimRunner on port: %s\n", argv[argc-2]);
     
     slim = Slim_Create();
     SocketServer* server = SocketServer_Create();
     SocketServer_register_handler(server, connection_handler);
 
-    int result = SocketServer_Run(server, argv[argc-1]);
+    int result = SocketServer_Run(server, argv[argc-2]);
 
     SocketServer_Destroy(server);
     Slim_Destroy(slim);
