@@ -60,10 +60,7 @@ public:
         } catch (...) {}
     }
 
-    // Zaślepki
     void dodawanieKursu() override {}
-    std::string znalezienieKierowcy(int) override { return ""; }
-    void modyfikacjaKierowcy(int, int) override {}
     std::string* znalezienieKierowcow(int) override { return nullptr; }
     void wyslaniePowiadomien(std::vector<int>, std::string) override {}
     void zglaszenieIncydentu(std::string) override {}
@@ -72,7 +69,6 @@ public:
     std::string znalezienieKursuRozpoczetego(int) override { return ""; }
 };
 
-// --- Zmienne globalne ---
 static FakeModel* fakeModel = nullptr;
 static Kontroler::ZgloszenieRozpoczecia* kontroler = nullptr;
 
@@ -102,7 +98,7 @@ extern "C" {
         // Pobieramy pierwszy argument jako string i konwertujemy na int
         const char* arg = SlimList_GetStringAt(args, 0);
         inputIdKursu = atoi(arg);
-        return ""; // Zwracamy pusty string (void w fitnesse)
+        return "";
     }
 
     // Setter: obecny kurs

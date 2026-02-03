@@ -61,6 +61,7 @@ target_include_directories(SZKM PUBLIC
 add_executable(SlimRunner
     "${CMAKE_SOURCE_DIR}/tests/SlimRunner.cpp"
     "${CMAKE_SOURCE_DIR}/tests/fixtures/ModyfikowanieRozkladuJazdyFixture.cpp"
+    "${CMAKE_SOURCE_DIR}/tests/fixtures/ZglaszanieRozpoczeciaFixture.cpp"
 )
 
 target_link_libraries(SlimRunner PRIVATE
