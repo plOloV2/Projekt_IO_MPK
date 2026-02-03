@@ -1,0 +1,18 @@
+---
+Test
+---
+<test page>
+!define TEST_SYSTEM {slim}
+!define TEST_RUNNER {../SlimRunner}
+!define COMMAND_PATTERN {%m %p}
+!define SLIM_VERSION {0.2}
+
+
+!|tests.fixtures.ZglosRozpoczecie|
+
+| idKursu | idKierowcy | obecny kurs | obecny kierowca | kursPoZmianie? | kierowcaPoZmianie? |
+| 0 | 1 | 1;-1 | 1;1,2;10:00,11:00;2 | 1;-1 | 1;1,2;10:00,11:00;2 |
+| 1 | 1 | 1;-1 | 1;1,2;10:00,11:00;2 | 1;-1 | 1;1,2;10:00,11:00;2 |
+| 1 | 1 | 1;-1 | 1;1,2;10:00,11:00 | 1;1 | 1;1,2;10:00,11:00;1 |
+| 1 | 0 | 1;-1 | 1;1,2;10:00,11:00;2 | 1;-1 | 1;1,2;10:00,11:00;2 |
+| 1 | 1 | 1;2 | 1;1,2;10:00,11:00;2 | 1;-1 | 1;1,2;10:00,11:00;2 |
