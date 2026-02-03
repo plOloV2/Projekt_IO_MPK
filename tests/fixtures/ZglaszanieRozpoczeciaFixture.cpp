@@ -61,8 +61,6 @@ public:
     }
 
     void dodawanieKursu() override {}
-    std::string znalezienieKierowcy(int) override { return ""; }
-    void modyfikacjaKierowcy(int, int) override {}
     std::string* znalezienieKierowcow(int) override { return nullptr; }
     void wyslaniePowiadomien(std::vector<int>, std::string) override {}
     void zglaszenieIncydentu(std::string) override {}
